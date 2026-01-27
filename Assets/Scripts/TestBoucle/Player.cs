@@ -7,11 +7,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private MapManager _mapManager;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)

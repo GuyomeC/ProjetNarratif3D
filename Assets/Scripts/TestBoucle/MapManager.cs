@@ -2,8 +2,10 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MapManager : MonoBehaviour
 {
@@ -14,9 +16,8 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject _lastCube;
 
     public float moveDuration = 0.25f;
-
-
-
+    public int TileId = 1;
+    public TextMeshProUGUI tileIdText;
 
     void Start()
     {
@@ -27,6 +28,8 @@ public class MapManager : MonoBehaviour
             GameObject tile = Instantiate(tilePrefab, new Vector3(0, 0, i * 6), Quaternion.identity);
             listeTile.Add(tile);
         }
+
+        tileIdText.text = TileId.ToString();
     }
 
     void Update()
@@ -37,6 +40,8 @@ public class MapManager : MonoBehaviour
     public void PlayerJump()
     { 
         StartCoroutine(PlayerJumpRoutine());
+        TileId++;
+        tileIdText.text = TileId.ToString();
     }
 
     IEnumerator PlayerJumpRoutine()
