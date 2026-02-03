@@ -295,8 +295,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 781.6
     y: 0
-    width: 391.20007
-    height: 311.19998
+    width: 404.66663
+    height: 374.6667
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 19}
