@@ -23,7 +23,7 @@ public class MapManager : MonoBehaviour
     {
         listeTile.Clear();
         listeTile.Add(MapLobby);
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 11; i++)
         {
             GameObject tile = Instantiate(tilePrefab, new Vector3(0, 0, i * 6), Quaternion.identity);
             listeTile.Add(tile);

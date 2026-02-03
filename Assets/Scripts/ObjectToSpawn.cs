@@ -17,6 +17,7 @@ public class ObjectToSpawn : MonoBehaviour, IInteractable
             if (other.CompareTag("Player"))
             {
                 GameObject.SetActive(true);
+                GameManager.Instance.ShowDialogue = true;
             }
         }
     }
@@ -28,6 +29,7 @@ public class ObjectToSpawn : MonoBehaviour, IInteractable
             if (other.CompareTag("Player"))
             {
                 GameObject.SetActive(false);
+                GameManager.Instance.ShowDialogue = false;
             }
         }
     }
