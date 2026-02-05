@@ -15,6 +15,8 @@ public class MapManager : MonoBehaviour
     [SerializeField] public List<GameObject> listeTile = new List<GameObject>();
     [SerializeField] private GameObject _lastCube;
 
+    public GameManager  GM;
+
     public float moveDuration = 0.25f;
     public int TileId = 1;
     public TextMeshProUGUI tileIdText;
@@ -25,7 +27,7 @@ public class MapManager : MonoBehaviour
         listeTile.Add(MapLobby);
         for (int i = 0; i < 11; i++)
         {
-            GameObject tile = Instantiate(tilePrefab, new Vector3(0, 0, i * 6), Quaternion.identity);
+            GameObject tile = Instantiate(tilePrefab, new Vector3(0, 0, i * 5.1f), Quaternion.identity);
             listeTile.Add(tile);
         }
 
@@ -34,7 +36,11 @@ public class MapManager : MonoBehaviour
 
     void Update()
     {
-
+        if(TileId == 5)
+        {
+            Debug.Log("Test");
+            GM.ShowDialogue = true;
+        }
     }
 
     public void PlayerJump()
@@ -57,7 +63,7 @@ public class MapManager : MonoBehaviour
 
         GameObject tile = Instantiate(
             tilePrefab,
-            new Vector3(0, 0, _lastCube.transform.position.z + 6),
+            new Vector3(0, 0, _lastCube.transform.position.z + 5.1f),
             Quaternion.identity
         );
 
@@ -75,7 +81,7 @@ public class MapManager : MonoBehaviour
         for (int i = 0; i < listeTile.Count; i++)
         {
             startPositions[i] = listeTile[i].transform.position;
-            targetPositions[i] = startPositions[i] - new Vector3(0, 0, 6);
+            targetPositions[i] = startPositions[i] - new Vector3(0, 0, 5.1f);
         }
 
         while (elapsed < moveDuration)
