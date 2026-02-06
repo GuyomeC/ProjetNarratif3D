@@ -18,8 +18,12 @@ public class DialogManager : MonoBehaviour
 
     public static DialogManager Instance;
     public RuntimeDialogGraph RuntimeGraph;
-
     public GameManager GM;
+
+    public List<TestScriptableObject> CurrentObject = new List<TestScriptableObject>();
+
+    public bool IsDialogueStarted;
+
 
     [Header("Localization")]
     public TextAsset LocalizationNameCSV;
@@ -67,7 +71,7 @@ public class DialogManager : MonoBehaviour
         //if (PopupView.Root) PopupView.Root.SetActive(false);
         //if (BubbleView.Root) BubbleView.Root.SetActive(false);
 
-        //if (!string.IsNullOrEmpty(RuntimeGraph.EntryNodeId) && GameManager.Instance.ShowDialogue)
+        //if (!string.IsNullOrEmpty(RuntimeGraph.EntryNodeId))
         //{
         //    ShowNode(RuntimeGraph.EntryNodeId);
         //}
@@ -170,22 +174,24 @@ public class DialogManager : MonoBehaviour
     private void Update()
     {
 
-        Debug.Log(GM.ShowDialogue);
-        if (Keyboard.current.eKey.wasPressedThisFrame && currentNode != null && currentNode.Choices.Count == 0)
+        if (Keyboard.current.pKey.wasPressedThisFrame && currentNode != null && currentNode.Choices.Count == 0 && GM.ShowDialogue)
         {
-            if (!string.IsNullOrEmpty(currentNode.NextNodeId) && GM.ShowDialogue)
+            if (!string.IsNullOrEmpty(currentNode.NextNodeId))
             {
-                if (!PanelView.Root.activeInHierarchy)
-                {
-                    PanelView.Root.SetActive(true);
-                }
                 ShowNode(currentNode.NextNodeId);
             }
             else
             {
                 EndDialogue();
             }
+        }
 
+        if (!PanelView.Root.activeInHierarchy && GM.ShowDialogue && Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            PanelView.Root.SetActive(true);
+            ShowNode(RuntimeGraph.EntryNodeId);
+            Debug.Log(RuntimeGraph.EntryNodeId);
+            Debug.Log(currentNode.NextNodeId);
         }
     }
 
