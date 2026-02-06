@@ -54,14 +54,20 @@ public class DialogueGraphImporter : ScriptedImporter
 
     private void ProcessDialogueNode(DialogueNode node, RuntimeDialogNode runtimeNode, Dictionary<INode, string> nodeIDMap)
     {
-        node.GetNodeOptionByName(DialogueNode.SpeakerOpt).TryGetValue(out NameKey speakerKey);
-        runtimeNode.SpeakerName = speakerKey.ToString();
+        node.GetNodeOptionByName(DialogueNode.SpeakerOptOne).TryGetValue(out NameKey speakerKeyOne);
+        runtimeNode.SpeakerNameOne = speakerKeyOne.ToString();
+
+        node.GetNodeOptionByName(DialogueNode.SpeakerOptTwo).TryGetValue(out NameKey speakerKeyTwo);
+        runtimeNode.SpeakerNameTwo = speakerKeyTwo.ToString();
 
         node.GetNodeOptionByName(DialogueNode.DialogueOpt).TryGetValue(out DialogKey dialogueKey);
         runtimeNode.DialogueText = dialogueKey.ToString();
 
-        node.GetNodeOptionByName(DialogueNode.speakerSprite).TryGetValue(out Sprite speakerImage);
-        runtimeNode.SpeakerSprite = speakerImage;
+        node.GetNodeOptionByName(DialogueNode.speakerSpriteOne).TryGetValue(out Sprite speakerImageOne);
+        runtimeNode.SpeakerSpriteOne = speakerImageOne;
+        
+        node.GetNodeOptionByName(DialogueNode.speakerSpriteTwo).TryGetValue(out Sprite speakerImageTwo);
+        runtimeNode.SpeakerSpriteTwo = speakerImageTwo;
 
         var nextNodePort = node.GetOutputPortByName("out")?.firstConnectedPort;
         if (nextNodePort != null)
@@ -79,14 +85,20 @@ public class DialogueGraphImporter : ScriptedImporter
 
     private void ProcessChoiceNode(ChoiceNode node, RuntimeDialogNode runtimeNode, Dictionary<INode, string> nodeIDMap)
     {
-        node.GetNodeOptionByName(ChoiceNode.SpeakerOpt).TryGetValue(out NameKey speakerKey);
-        runtimeNode.SpeakerName = speakerKey.ToString();
+        node.GetNodeOptionByName(DialogueNode.SpeakerOptOne).TryGetValue(out NameKey speakerKeyOne);
+        runtimeNode.SpeakerNameOne = speakerKeyOne.ToString();
 
-        node.GetNodeOptionByName(ChoiceNode.DialogueOpt).TryGetValue(out DialogKey dialogueKey);
+        node.GetNodeOptionByName(DialogueNode.SpeakerOptTwo).TryGetValue(out NameKey speakerKeyTwo);
+        runtimeNode.SpeakerNameTwo = speakerKeyTwo.ToString();
+
+        node.GetNodeOptionByName(DialogueNode.DialogueOpt).TryGetValue(out DialogKey dialogueKey);
         runtimeNode.DialogueText = dialogueKey.ToString();
 
-        node.GetNodeOptionByName(DialogueNode.speakerSprite).TryGetValue(out Sprite speakerImage);
-        runtimeNode.SpeakerSprite = speakerImage;
+        node.GetNodeOptionByName(DialogueNode.speakerSpriteOne).TryGetValue(out Sprite speakerImageOne);
+        runtimeNode.SpeakerSpriteOne = speakerImageOne;
+
+        node.GetNodeOptionByName(DialogueNode.speakerSpriteTwo).TryGetValue(out Sprite speakerImageTwo);
+        runtimeNode.SpeakerSpriteTwo = speakerImageTwo;
 
         var choiceOutputPorts = node.GetOutputPorts().Where(p => p.name.StartsWith("Choice "));
 

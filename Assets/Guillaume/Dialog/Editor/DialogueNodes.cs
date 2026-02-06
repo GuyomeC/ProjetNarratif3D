@@ -28,9 +28,11 @@ public class DialogueNode : Node
 {
 
     public const string modeId = "Mode";
-    public const string SpeakerOpt = "Speaker Key";
+    public const string SpeakerOptOne = "Speaker Key One";
+    public const string SpeakerOptTwo = "Speaker Key Two";
     public const string DialogueOpt = "Dialogue Key";
-    public const string speakerSprite = "Image Speaker";
+    public const string speakerSpriteOne = "Image Speaker One";
+    public const string speakerSpriteTwo = "Image Speaker Two";
 
     protected override void OnDefinePorts(IPortDefinitionContext context)
     {
@@ -41,9 +43,11 @@ public class DialogueNode : Node
     protected override void OnDefineOptions(IOptionDefinitionContext context)
     {
         context.AddOption<DialogueMode>(modeId).WithDefaultValue(DialogueMode.Panel).Delayed();
-        context.AddOption<NameKey>(SpeakerOpt).WithDefaultValue(NameKey.None);
+        context.AddOption<NameKey>(SpeakerOptOne).WithDefaultValue(NameKey.None);
+        context.AddOption<NameKey>(SpeakerOptTwo).WithDefaultValue(NameKey.None);
         context.AddOption<DialogKey>(DialogueOpt).WithDefaultValue(DialogKey.None);
-        context.AddOption<Sprite>(speakerSprite).WithDefaultValue(null);
+        context.AddOption<Sprite>(speakerSpriteOne).WithDefaultValue(null);
+        context.AddOption<Sprite>(speakerSpriteTwo).WithDefaultValue(null);
     }
 }
 

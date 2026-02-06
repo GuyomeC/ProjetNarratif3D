@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -38,10 +39,13 @@ public class DialogManager : MonoBehaviour
     public class DialogView
     {
         public GameObject Root;
-        public TextMeshProUGUI SpeakerText;
+        public TextMeshProUGUI SpeakerTextOne;
+        public TextMeshProUGUI SpeakerTextTwo;
         public TextMeshProUGUI BodyText;
         public Transform ChoiceContainer;
-        public Image SpeakerImage;
+        public Image SpeakerImageOne;
+        public Image SpeakerImageTwo;
+        public GameObject BG;
     }
 
     [Header("UI Views")]
@@ -75,7 +79,11 @@ public class DialogManager : MonoBehaviour
             }
         }
 
-        if (PanelView.Root) PanelView.Root.SetActive(false);
+        if (PanelView.Root)
+        {
+            PanelView.Root.SetActive(false);
+            PanelView.BG.SetActive(false);
+        }
         //if (PopupView.Root) PopupView.Root.SetActive(false);
         //if (BubbleView.Root) BubbleView.Root.SetActive(false);
 
@@ -181,23 +189,25 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
-
-        if (Keyboard.current.pKey.wasPressedThisFrame && currentNode != null && currentNode.Choices.Count == 0 && GM.ShowDialogue)
+        if (Mouse.current.leftButton.wasPressedThisFrame && GM.ShowDialogue)
         {
-            if (!string.IsNullOrEmpty(currentNode.NextNodeId))
+            if (!PanelView.Root.activeInHierarchy && CurrentDialogGraph)
+            {
+                PanelView.Root.SetActive(true);
+                PanelView.BG.SetActive(true);
+                GM.IsInDialogue = true;
+                ShowNode(CurrentDialogGraph.EntryNodeId);
+            }        
+            else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0)
             {
                 ShowNode(currentNode.NextNodeId);
             }
             else
             {
                 EndDialogue();
+                GM.IsInDialogue = false;
+                GM.EndDialogue = true;
             }
-        }
-
-        if (!PanelView.Root.activeInHierarchy && GM.ShowDialogue && Keyboard.current.eKey.wasPressedThisFrame && CurrentDialogGraph)
-        {
-            PanelView.Root.SetActive(true);
-            ShowNode(CurrentDialogGraph.EntryNodeId);
         }
     }
 
@@ -215,20 +225,29 @@ public class DialogManager : MonoBehaviour
         if (currentView != targetView)
         {
             if (currentView != null && currentView.Root != null)
+            {
                 currentView.Root.SetActive(false);
+                currentView.BG.SetActive(false);
+            }
 
             targetView.Root.SetActive(true);
             currentView = targetView;
         }
 
-        if (currentView.SpeakerText != null)
-            currentView.SpeakerText.text = GetText(currentNode.SpeakerName);
+        if (currentView.SpeakerTextOne != null)
+            currentView.SpeakerTextOne.text = GetText(currentNode.SpeakerNameOne);
+        
+        if (currentView.SpeakerTextTwo != null)
+            currentView.SpeakerTextTwo.text = GetText(currentNode.SpeakerNameTwo);
 
         if (currentView.BodyText != null)
             currentView.BodyText.text = GetText(currentNode.DialogueText);
 
-        if (currentView.SpeakerImage != null)
-            currentView.SpeakerImage.sprite = currentNode.SpeakerSprite;
+        if (currentView.SpeakerImageOne != null)
+            currentView.SpeakerImageOne.sprite = currentNode.SpeakerSpriteOne;
+        
+        if (currentView.SpeakerImageTwo != null)
+            currentView.SpeakerImageTwo.sprite = currentNode.SpeakerSpriteTwo;
 
         if (currentView.ChoiceContainer != null)
         {
@@ -262,6 +281,7 @@ public class DialogManager : MonoBehaviour
         if (currentView != null && currentView.Root != null)
         {
             currentView.Root.SetActive(false);
+            currentView.BG.SetActive(false);
 
             // Nettoyage des boutons
             if (currentView.ChoiceContainer != null)
