@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 120
+  controlID: 65
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -1226,9 +1226,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: -0.40023345, y: 5.626263, z: -3.5381498}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: -0.40023345, y: 5.626263, z: -3.5381498}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1363,7 +1363,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\calvi\Documents\TAFF\ANNEE 3\projet narratif\ProjetNarratif3D
   m_LockTracker:
@@ -1382,12 +1382,13 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 30}
     m_SelectedIDs:
-    - m_Data: 48716
+    - m_Data: 49040
     m_LastClickedID:
-      m_Data: 48716
+      m_Data: 49040
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 48716
+    - m_Data: 49040
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1450,9 +1451,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 48414
-    m_LastClickedInstanceID: 48414
-    m_HadKeyboardFocusLastEvent: 0
+    - m_Data: 63208
+    m_LastClickedInstanceID: 63208
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1561,13 +1562,25 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 400}
       m_SelectedIDs:
-      - m_Data: 48414
+      - m_Data: 63208
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
+      - m_Data: -4004
+      - m_Data: -3790
+      - m_Data: -3588
+      - m_Data: -3368
+      - m_Data: -3172
+      - m_Data: -2974
+      - m_Data: -2778
+      - m_Data: -2564
       - m_Data: -1296
+      - m_Data: 58974
+      - m_Data: 60924
+      - m_Data: 61162
+      - m_Data: 62334
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
