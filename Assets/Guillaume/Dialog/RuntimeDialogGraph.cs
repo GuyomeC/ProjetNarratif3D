@@ -14,9 +14,11 @@ public class RuntimeDialogGraph : ScriptableObject
 public class RuntimeDialogNode
 {
     public string NodeId;
-    public string SpeakerName;
+    public string SpeakerNameOne;
+    public string SpeakerNameTwo;
     public string DialogueText;
-    public Sprite SpeakerSprite;
+    public Sprite SpeakerSpriteOne;
+    public Sprite SpeakerSpriteTwo;
     public List<ChoiceData> Choices = new List<ChoiceData>();
     public string NextNodeId;
 
