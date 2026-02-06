@@ -4,7 +4,7 @@ using System;
 using UnityEngine.TestTools.Constraints;
 using NUnit.Framework;
 using System.Collections.Generic;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 [Serializable]
 public class StartNode : Node
@@ -30,6 +30,7 @@ public class DialogueNode : Node
     public const string modeId = "Mode";
     public const string SpeakerOpt = "Speaker Key";
     public const string DialogueOpt = "Dialogue Key";
+    public const string speakerSprite = "Image Speaker";
 
     protected override void OnDefinePorts(IPortDefinitionContext context)
     {
@@ -42,6 +43,7 @@ public class DialogueNode : Node
         context.AddOption<DialogueMode>(modeId).WithDefaultValue(DialogueMode.Panel).Delayed();
         context.AddOption<NameKey>(SpeakerOpt).WithDefaultValue(NameKey.None);
         context.AddOption<DialogKey>(DialogueOpt).WithDefaultValue(DialogKey.None);
+        context.AddOption<Sprite>(speakerSprite).WithDefaultValue(null);
     }
 }
 
@@ -53,6 +55,7 @@ public class ChoiceNode : Node
     const string portId = "Port Count";
     public const string SpeakerOpt = "Speaker Key";
     public const string DialogueOpt = "Dialogue Key";
+    public const string speakerSprite = "Image Speaker";
     protected override void OnDefinePorts(IPortDefinitionContext context)
     {
         context.AddInputPort("in").Build();
@@ -72,5 +75,6 @@ public class ChoiceNode : Node
         context.AddOption<int>(portId).WithDefaultValue(2).Delayed();
         context.AddOption<NameKey>(SpeakerOpt).WithDefaultValue(NameKey.None);
         context.AddOption<DialogKey>(DialogueOpt).WithDefaultValue(DialogKey.None);
+        context.AddOption<Sprite>(speakerSprite).WithDefaultValue(null);
     }
 }

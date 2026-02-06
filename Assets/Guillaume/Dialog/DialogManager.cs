@@ -20,9 +20,11 @@ public class DialogManager : MonoBehaviour
     public RuntimeDialogGraph RuntimeGraph;
     public GameManager GM;
 
-    public List<TestScriptableObject> CurrentObject = new List<TestScriptableObject>();
+    public List<PnjScript> CurrentObject = new List<PnjScript>();
 
     public bool IsDialogueStarted;
+
+    public RuntimeDialogGraph CurrentDialogGraph;
 
 
     [Header("Localization")]
@@ -39,6 +41,7 @@ public class DialogManager : MonoBehaviour
         public TextMeshProUGUI SpeakerText;
         public TextMeshProUGUI BodyText;
         public Transform ChoiceContainer;
+        public Image SpeakerImage;
     }
 
     [Header("UI Views")]
@@ -62,9 +65,14 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (var node in RuntimeGraph.AllNodes)
+
+        for(int i = 0; i < CurrentObject.Count; i++)
         {
-            nodeLookup[node.NodeId] = node;
+            RuntimeDialogGraph rdg = CurrentObject[i].dialogGraph;
+            foreach (var node in rdg.AllNodes)
+            {
+                nodeLookup[node.NodeId] = node;
+            }
         }
 
         if (PanelView.Root) PanelView.Root.SetActive(false);
@@ -186,12 +194,10 @@ public class DialogManager : MonoBehaviour
             }
         }
 
-        if (!PanelView.Root.activeInHierarchy && GM.ShowDialogue && Keyboard.current.eKey.wasPressedThisFrame)
+        if (!PanelView.Root.activeInHierarchy && GM.ShowDialogue && Keyboard.current.eKey.wasPressedThisFrame && CurrentDialogGraph)
         {
             PanelView.Root.SetActive(true);
-            ShowNode(RuntimeGraph.EntryNodeId);
-            Debug.Log(RuntimeGraph.EntryNodeId);
-            Debug.Log(currentNode.NextNodeId);
+            ShowNode(CurrentDialogGraph.EntryNodeId);
         }
     }
 
@@ -220,6 +226,9 @@ public class DialogManager : MonoBehaviour
 
         if (currentView.BodyText != null)
             currentView.BodyText.text = GetText(currentNode.DialogueText);
+
+        if (currentView.SpeakerImage != null)
+            currentView.SpeakerImage.sprite = currentNode.SpeakerSprite;
 
         if (currentView.ChoiceContainer != null)
         {

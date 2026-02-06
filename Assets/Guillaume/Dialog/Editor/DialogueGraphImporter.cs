@@ -4,6 +4,7 @@ using Unity.GraphToolkit.Editor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 [ScriptedImporter(1, DialogGraph.AssetExtension)]
 public class DialogueGraphImporter : ScriptedImporter
@@ -59,6 +60,9 @@ public class DialogueGraphImporter : ScriptedImporter
         node.GetNodeOptionByName(DialogueNode.DialogueOpt).TryGetValue(out DialogKey dialogueKey);
         runtimeNode.DialogueText = dialogueKey.ToString();
 
+        node.GetNodeOptionByName(DialogueNode.speakerSprite).TryGetValue(out Sprite speakerImage);
+        runtimeNode.SpeakerSprite = speakerImage;
+
         var nextNodePort = node.GetOutputPortByName("out")?.firstConnectedPort;
         if (nextNodePort != null)
             runtimeNode.NextNodeId = nodeIDMap[nextNodePort.GetNode()];
@@ -80,6 +84,9 @@ public class DialogueGraphImporter : ScriptedImporter
 
         node.GetNodeOptionByName(ChoiceNode.DialogueOpt).TryGetValue(out DialogKey dialogueKey);
         runtimeNode.DialogueText = dialogueKey.ToString();
+
+        node.GetNodeOptionByName(DialogueNode.speakerSprite).TryGetValue(out Sprite speakerImage);
+        runtimeNode.SpeakerSprite = speakerImage;
 
         var choiceOutputPorts = node.GetOutputPorts().Where(p => p.name.StartsWith("Choice "));
 

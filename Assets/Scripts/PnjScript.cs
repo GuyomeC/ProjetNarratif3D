@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class ObjectToSpawn : MonoBehaviour, IInteractable
+public class PnjScript : MonoBehaviour, IInteractable
 {
 
     public GameObject GameObject;
+    public int ID;
+    public RuntimeDialogGraph dialogGraph;
 
     public void Interact()
     {
@@ -18,6 +20,7 @@ public class ObjectToSpawn : MonoBehaviour, IInteractable
             {
                 GameObject.SetActive(true);
                 GameManager.Instance.ShowDialogue = true;
+                DialogManager.Instance.CurrentDialogGraph = dialogGraph;
             }
         }
     }
