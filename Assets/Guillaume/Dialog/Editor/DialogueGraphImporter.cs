@@ -73,6 +73,9 @@ public class DialogueGraphImporter : ScriptedImporter
         node.GetNodeOptionByName(DialogueNode.bgSprite).TryGetValue(out Sprite bgSprite);
         runtimeNode.BackgroundSprite = bgSprite;
 
+        node.GetNodeOptionByName(DialogueNode.IsSpeakerOnLeft).TryGetValue(out bool isSpeakerOnLeft);
+        runtimeNode.IsSpeakerOnLeft = isSpeakerOnLeft;
+
         var nextNodePort = node.GetOutputPortByName("out")?.firstConnectedPort;
         if (nextNodePort != null)
             runtimeNode.NextNodeId = nodeIDMap[nextNodePort.GetNode()];

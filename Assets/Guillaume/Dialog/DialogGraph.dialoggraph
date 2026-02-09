@@ -207,6 +207,7 @@ MonoBehaviour:
           - __option_Image Speaker One
           - __option_Image Speaker Two
           - __option_Image Background
+          - __option_Is Speaker On Left
           m_ValueList:
           - rid: 8154959050052731082
           - rid: 8154959050052731084
@@ -215,6 +216,7 @@ MonoBehaviour:
           - rid: 8154959144290877689
           - rid: 8154959144290877690
           - rid: 8154959208602140736
+          - rid: 8154959208602140742
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -312,6 +314,7 @@ MonoBehaviour:
           - __option_Image Speaker One
           - __option_Image Speaker Two
           - __option_Image Background
+          - __option_Is Speaker On Left
           m_ValueList:
           - rid: 8154959050052731094
           - rid: 8154959050052731096
@@ -320,6 +323,7 @@ MonoBehaviour:
           - rid: 8154959144290877693
           - rid: 8154959144290877694
           - rid: 8154959208602140737
+          - rid: 8154959208602140743
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -417,6 +421,7 @@ MonoBehaviour:
           - __option_Image Speaker One
           - __option_Image Speaker Two
           - __option_Image Background
+          - __option_Is Speaker On Left
           m_ValueList:
           - rid: 8154959072624902210
           - rid: 8154959072624902212
@@ -425,6 +430,7 @@ MonoBehaviour:
           - rid: 8154959144290877697
           - rid: 8154959144290877698
           - rid: 8154959208602140738
+          - rid: 8154959208602140744
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -668,3 +674,15 @@ MonoBehaviour:
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
         m_Value: {fileID: 21300000, guid: b04b48cee2d6c104ca02deb57c73f6d9, type: 3}
+    - rid: 8154959208602140742
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 1
+    - rid: 8154959208602140743
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 1
+    - rid: 8154959208602140744
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 1

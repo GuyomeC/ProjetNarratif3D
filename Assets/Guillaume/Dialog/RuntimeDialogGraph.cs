@@ -22,6 +22,7 @@ public class RuntimeDialogNode
     public Sprite SpeakerSpriteTwo;
     public List<ChoiceData> Choices = new List<ChoiceData>();
     public string NextNodeId;
+    public bool IsSpeakerOnLeft;
 
     public DialogueMode Mode;
 }

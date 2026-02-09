@@ -49,10 +49,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: -11.200001
-          y: 60
-          width: 1220
-          height: 252
+          x: 5.5999985
+          y: 62.4
+          width: 1254.4
+          height: 253.6
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 1364095016585177540
@@ -155,7 +155,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: c4a970b7303dee124507fc4b4401362c
         m_Version: 2
-        m_Position: {x: -11.254089, y: 204.3181}
+        m_Position: {x: 5.3999443, y: 228.37392}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -207,6 +207,7 @@ MonoBehaviour:
           - __option_Image Speaker One
           - __option_Image Speaker Two
           - __option_Image Background
+          - __option_Is Speaker On Left
           m_ValueList:
           - rid: 8154959139877683268
           - rid: 8154959139877683270
@@ -215,6 +216,7 @@ MonoBehaviour:
           - rid: 8154959144290877701
           - rid: 8154959144290877702
           - rid: 8154959208602140739
+          - rid: 8154959208602140745
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -312,6 +314,7 @@ MonoBehaviour:
           - __option_Image Speaker One
           - __option_Image Speaker Two
           - __option_Image Background
+          - __option_Is Speaker On Left
           m_ValueList:
           - rid: 8154959139877683274
           - rid: 8154959139877683276
@@ -320,6 +323,7 @@ MonoBehaviour:
           - rid: 8154959144290877705
           - rid: 8154959144290877706
           - rid: 8154959208602140740
+          - rid: 8154959208602140746
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -402,7 +406,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 21500e2297dd32c1c49cc2b67873aac3
         m_Version: 2
-        m_Position: {x: 780.8158, y: 59.970924}
+        m_Position: {x: 803.0212, y: 67.37275}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -417,6 +421,7 @@ MonoBehaviour:
           - __option_Image Speaker One
           - __option_Image Speaker Two
           - __option_Image Background
+          - __option_Is Speaker On Left
           m_ValueList:
           - rid: 8154959139877683280
           - rid: 8154959139877683282
@@ -425,6 +430,7 @@ MonoBehaviour:
           - rid: 8154959144290877709
           - rid: 8154959144290877710
           - rid: 8154959208602140741
+          - rid: 8154959208602140747
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -507,7 +513,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 43838a66297e8097dc5627a4d9596ec8
         m_Version: 2
-        m_Position: {x: 1093.7001, y: 201.6364}
+        m_Position: {x: 1145.5127, y: 229.39313}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -668,3 +674,15 @@ MonoBehaviour:
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
         m_Value: {fileID: 21300000, guid: cfb5d0ccd41feea469c3bfeabd2cf8e7, type: 3}
+    - rid: 8154959208602140745
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 1
+    - rid: 8154959208602140746
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 1
+    - rid: 8154959208602140747
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: 1

@@ -34,6 +34,7 @@ public class DialogueNode : Node
     public const string DialogueOpt = "Dialogue Key";
     public const string speakerSpriteOne = "Image Speaker One";
     public const string speakerSpriteTwo = "Image Speaker Two";
+    public const string IsSpeakerOnLeft = "Is Speaker On Left";
 
     protected override void OnDefinePorts(IPortDefinitionContext context)
     {
@@ -50,6 +51,7 @@ public class DialogueNode : Node
         context.AddOption<DialogKey>(DialogueOpt).WithDefaultValue(DialogKey.None);
         context.AddOption<Sprite>(speakerSpriteOne).WithDefaultValue(null);
         context.AddOption<Sprite>(speakerSpriteTwo).WithDefaultValue(null);
+        context.AddOption<bool>(IsSpeakerOnLeft).WithDefaultValue(true);
     }
 }
 

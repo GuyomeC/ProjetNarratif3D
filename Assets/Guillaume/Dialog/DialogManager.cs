@@ -53,6 +53,8 @@ public class DialogManager : MonoBehaviour
     //public DialogView PopupView; 
     //public DialogView BubbleView;
     public Button ChoiceButtonPrefab;
+    public Sprite OnLeft;
+    public Sprite OnRight;
 
 
     private Dictionary<string, RuntimeDialogNode> nodeLookup = new Dictionary<string, RuntimeDialogNode>();
@@ -247,7 +249,16 @@ public class DialogManager : MonoBehaviour
 
         if(currentView.BG != null)
             currentView.BG.sprite = currentNode.BackgroundSprite;
-        
+
+        if (currentNode.IsSpeakerOnLeft != false)
+        {
+            currentView.BG.sprite = OnLeft;
+        }
+        else
+        {
+                currentView.BG.sprite = OnRight;
+        }
+
 
         if (currentView.ChoiceContainer != null)
         {
