@@ -1,14 +1,31 @@
 Key;French;English;Espanol
-dial_father_phrase0;Déjà vide ? Putain.;Hello!;Buenos Días !
-dial_father_phrase1;Quoi encore ?;I am the father ;Soy el padre
-dial_father_phrase2;C'est pour ça que tu me dérange ? ;And my name is Adolf;Y mi nombre es Adolf
-dial_father_phrase3;Tu crois que j'ai que ça a faire ?!;;
-dial_father_phrase4;Retourne jouer avec tes peluches;;
-dial_father_phrase5;(s'écroule sur la table, complètement ivre);;
+SCENE 01;;;
+dial_Noboru_phrase0;Déjà vide ? Putain.;Hello!;Buenos Días !
+dial_Noboru_phrase1;Quoi encore ?;I am the father ;Soy el padre
+dial_Noboru_phrase2;C'est pour ça que tu me dérange ? ;And my name is Adolf;Y mi nombre es Adolf
+dial_Noboru_phrase3;Tu crois que j'ai que ça a faire ?!;;
+dial_Noboru_phrase4;Retourne jouer avec tes peluches;;
+dial_Noboru_phrase5;(s'écroule sur la table, complètement ivre);;
 ;;;
-dial_girl_phrase0;Papa ?;hello;hola
-dial_girl_phrase1;Tu veux bien jouer avec moi ?;i'm the girl;soy la nina
-dial_girl_phrase2;On joue au salon de thé et-;and my name is Jacqueline;y mi nombre es Jacqueline
-dial_girl_phrase3;Mais.. ;;
-dial_girl_phrase4;(Se cache);;
-dial_girl_phrase5;(Pars);;
+dial_Hana_phrase0;Papa ?;hello;hola
+dial_Hana_phrase1;Tu veux bien jouer avec moi ?;i'm the girl;soy la nina
+dial_Hana_phrase2;On joue au salon de thé et-;and my name is Jacqueline;y mi nombre es Jacqueline
+dial_Hana_phrase3;Mais.. ;;
+dial_Hana_phrase4;(Se cache);;
+dial_Hana_phrase5;(Pars);;
+;;;
+SCENE 02;;;
+dial_Noboru_phrase6;(En pleurs) Pardon... je ne voulais pas... ;;
+;;;
+dial_Tetsuz? _phrase0;Regarde moi quand je te parle !;;
+dial_Tetsuz? _phrase1;Et arrête de pleurer ! ;;
+dial_Tetsuz? _phrase2;Tu voulais pas ?;;
+dial_Tetsuz? _phrase3;T’es qu’une petite merde.;;
+dial_Tetsuz? _phrase4;Tu m'entends ?;;
+dial_Tetsuz? _phrase5;T'es inutile.;;
+dial_Tetsuz? _phrase6;(s'accroupit pour lui hurler au visage.);;
+dial_Tetsuz? _phrase7;Tu ne feras jamais rien de ta vie.;;
+dial_Tetsuz? _phrase8;Tu es une merde et tu resteras une merde.;;
+dial_Tetsuz? _phrase9;Dégage de ma vue !;;
+;;;
+Scene 03;;;
