@@ -52,7 +52,7 @@ MonoBehaviour:
           x: -11.200001
           y: 60
           width: 1220
-          height: 231.20001
+          height: 252
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 1364095016585177540
@@ -206,6 +206,7 @@ MonoBehaviour:
           - __option_Speaker Key Two
           - __option_Image Speaker One
           - __option_Image Speaker Two
+          - __option_Image Background
           m_ValueList:
           - rid: 8154959139877683268
           - rid: 8154959139877683270
@@ -213,6 +214,7 @@ MonoBehaviour:
           - rid: 8154959144290877700
           - rid: 8154959144290877701
           - rid: 8154959144290877702
+          - rid: 8154959208602140739
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -309,6 +311,7 @@ MonoBehaviour:
           - __option_Speaker Key Two
           - __option_Image Speaker One
           - __option_Image Speaker Two
+          - __option_Image Background
           m_ValueList:
           - rid: 8154959139877683274
           - rid: 8154959139877683276
@@ -316,6 +319,7 @@ MonoBehaviour:
           - rid: 8154959144290877704
           - rid: 8154959144290877705
           - rid: 8154959144290877706
+          - rid: 8154959208602140740
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -412,6 +416,7 @@ MonoBehaviour:
           - __option_Speaker Key Two
           - __option_Image Speaker One
           - __option_Image Speaker Two
+          - __option_Image Background
           m_ValueList:
           - rid: 8154959139877683280
           - rid: 8154959139877683282
@@ -419,6 +424,7 @@ MonoBehaviour:
           - rid: 8154959144290877708
           - rid: 8154959144290877709
           - rid: 8154959144290877710
+          - rid: 8154959208602140741
         m_InputPortInfos:
           expandedPortsById:
             m_KeyList: []
@@ -650,3 +656,15 @@ MonoBehaviour:
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
         m_Value: {fileID: 21300000, guid: a4214b23681a2a848855809f50b76821, type: 3}
+    - rid: 8154959208602140739
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 21300000, guid: cfb5d0ccd41feea469c3bfeabd2cf8e7, type: 3}
+    - rid: 8154959208602140740
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 21300000, guid: cfb5d0ccd41feea469c3bfeabd2cf8e7, type: 3}
+    - rid: 8154959208602140741
+      type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
+      data:
+        m_Value: {fileID: 21300000, guid: cfb5d0ccd41feea469c3bfeabd2cf8e7, type: 3}

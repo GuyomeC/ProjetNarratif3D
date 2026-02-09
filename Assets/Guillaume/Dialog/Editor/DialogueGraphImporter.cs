@@ -35,11 +35,12 @@ public class DialogueGraphImporter : ScriptedImporter
             if (iNode is StartNode || iNode is EndNode) continue;
 
             var runtimeNode = new RuntimeDialogNode { NodeId = nodeIDMap[iNode] };
-            if(iNode is DialogueNode dialogueNode)
+
+
+            if (iNode is DialogueNode dialogueNode)
             {
                 ProcessDialogueNode(dialogueNode, runtimeNode, nodeIDMap);
             }
-
             else if(iNode is ChoiceNode choiceNode)
             {
                 ProcessChoiceNode(choiceNode, runtimeNode, nodeIDMap);
@@ -69,6 +70,9 @@ public class DialogueGraphImporter : ScriptedImporter
         node.GetNodeOptionByName(DialogueNode.speakerSpriteTwo).TryGetValue(out Sprite speakerImageTwo);
         runtimeNode.SpeakerSpriteTwo = speakerImageTwo;
 
+        node.GetNodeOptionByName(DialogueNode.bgSprite).TryGetValue(out Sprite bgSprite);
+        runtimeNode.BackgroundSprite = bgSprite;
+
         var nextNodePort = node.GetOutputPortByName("out")?.firstConnectedPort;
         if (nextNodePort != null)
             runtimeNode.NextNodeId = nodeIDMap[nextNodePort.GetNode()];
@@ -82,6 +86,9 @@ public class DialogueGraphImporter : ScriptedImporter
             runtimeNode.Mode = DialogueMode.Panel;
         }
     }
+
+        
+  
 
     private void ProcessChoiceNode(ChoiceNode node, RuntimeDialogNode runtimeNode, Dictionary<INode, string> nodeIDMap)
     {

@@ -12,6 +12,7 @@ public class StartNode : Node
     protected override void OnDefinePorts(IPortDefinitionContext context)
     {
         context.AddOutputPort("out").Build();
+
     }
 }
 
@@ -26,7 +27,7 @@ public class EndNode : Node
 
 public class DialogueNode : Node
 {
-
+    public const string bgSprite = "Image Background";
     public const string modeId = "Mode";
     public const string SpeakerOptOne = "Speaker Key One";
     public const string SpeakerOptTwo = "Speaker Key Two";
@@ -42,6 +43,7 @@ public class DialogueNode : Node
 
     protected override void OnDefineOptions(IOptionDefinitionContext context)
     {
+        context.AddOption<Sprite>(bgSprite).WithDefaultValue(null);
         context.AddOption<DialogueMode>(modeId).WithDefaultValue(DialogueMode.Panel).Delayed();
         context.AddOption<NameKey>(SpeakerOptOne).WithDefaultValue(NameKey.None);
         context.AddOption<NameKey>(SpeakerOptTwo).WithDefaultValue(NameKey.None);

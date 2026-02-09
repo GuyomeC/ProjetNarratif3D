@@ -45,7 +45,7 @@ public class DialogManager : MonoBehaviour
         public Transform ChoiceContainer;
         public Image SpeakerImageOne;
         public Image SpeakerImageTwo;
-        public GameObject BG;
+        public Image BG;
     }
 
     [Header("UI Views")]
@@ -82,7 +82,7 @@ public class DialogManager : MonoBehaviour
         if (PanelView.Root)
         {
             PanelView.Root.SetActive(false);
-            PanelView.BG.SetActive(false);
+            PanelView.BG.gameObject.SetActive(false);
         }
         //if (PopupView.Root) PopupView.Root.SetActive(false);
         //if (BubbleView.Root) BubbleView.Root.SetActive(false);
@@ -189,24 +189,18 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame && GM.ShowDialogue)
+        if (GM.CanShowDialogue && Mouse.current.leftButton.wasPressedThisFrame)
         {
             if (!PanelView.Root.activeInHierarchy && CurrentDialogGraph)
             {
                 PanelView.Root.SetActive(true);
-                PanelView.BG.SetActive(true);
+                PanelView.BG.gameObject.SetActive(true);
                 GM.IsInDialogue = true;
                 ShowNode(CurrentDialogGraph.EntryNodeId);
             }        
             else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0)
             {
                 ShowNode(currentNode.NextNodeId);
-            }
-            else
-            {
-                EndDialogue();
-                GM.IsInDialogue = false;
-                GM.EndDialogue = true;
             }
         }
     }
@@ -216,6 +210,8 @@ public class DialogManager : MonoBehaviour
         if (!nodeLookup.ContainsKey(nodeId))
         {
             EndDialogue();
+            GameManager.Instance.IsInDialogue = false;
+            GameManager.Instance.CanShowDialogue = false;
             return;
         }
         currentNode = nodeLookup[nodeId];
@@ -227,7 +223,7 @@ public class DialogManager : MonoBehaviour
             if (currentView != null && currentView.Root != null)
             {
                 currentView.Root.SetActive(false);
-                currentView.BG.SetActive(false);
+                currentView.BG.gameObject.SetActive(false);
             }
 
             targetView.Root.SetActive(true);
@@ -248,6 +244,10 @@ public class DialogManager : MonoBehaviour
         
         if (currentView.SpeakerImageTwo != null)
             currentView.SpeakerImageTwo.sprite = currentNode.SpeakerSpriteTwo;
+
+        if(currentView.BG != null)
+            currentView.BG.sprite = currentNode.BackgroundSprite;
+        
 
         if (currentView.ChoiceContainer != null)
         {
@@ -281,7 +281,7 @@ public class DialogManager : MonoBehaviour
         if (currentView != null && currentView.Root != null)
         {
             currentView.Root.SetActive(false);
-            currentView.BG.SetActive(false);
+            currentView.BG.gameObject.SetActive(false);
 
             // Nettoyage des boutons
             if (currentView.ChoiceContainer != null)
@@ -297,8 +297,6 @@ public class DialogManager : MonoBehaviour
     {
         switch (mode)
         {
-            //case DialogueMode.Popup: return PopupView;
-            //case DialogueMode.Bulle: return BubbleView;
             case DialogueMode.Panel:
             default: return PanelView;
         }

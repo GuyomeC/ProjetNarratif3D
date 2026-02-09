@@ -14,6 +14,7 @@ public class RuntimeDialogGraph : ScriptableObject
 public class RuntimeDialogNode
 {
     public string NodeId;
+    public Sprite BackgroundSprite;
     public string SpeakerNameOne;
     public string SpeakerNameTwo;
     public string DialogueText;

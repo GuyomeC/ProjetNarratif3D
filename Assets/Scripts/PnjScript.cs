@@ -4,8 +4,8 @@ public class PnjScript : MonoBehaviour, IInteractable
 {
 
     public GameObject GameObject;
-    public int ID;
     public RuntimeDialogGraph dialogGraph;
+    public string PnjName;
 
     public void Interact()
     {
@@ -19,7 +19,7 @@ public class PnjScript : MonoBehaviour, IInteractable
             if (other.CompareTag("Player"))
             {
                 GameObject.SetActive(true);
-                GameManager.Instance.ShowDialogue = true;
+                GameManager.Instance.CanShowDialogue = true;
                 DialogManager.Instance.CurrentDialogGraph = dialogGraph;
             }
         }
@@ -32,7 +32,7 @@ public class PnjScript : MonoBehaviour, IInteractable
             if (other.CompareTag("Player"))
             {
                 GameObject.SetActive(false);
-                GameManager.Instance.ShowDialogue = false;
+                GameManager.Instance.CanShowDialogue = false;
             }
         }
     }

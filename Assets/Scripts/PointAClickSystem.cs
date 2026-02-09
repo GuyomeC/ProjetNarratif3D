@@ -12,7 +12,7 @@ public class PointAClickSystem : MonoBehaviour
 
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame && !GM.IsInDialogue)
+        if (Mouse.current.leftButton.wasPressedThisFrame && !GM.IsInDialogue && !GM.CanShowDialogue)
         {
             Vector3 mousePosition = Mouse.current.position.ReadValue();
             Ray ray = MainCamera.ScreenPointToRay(mousePosition);
