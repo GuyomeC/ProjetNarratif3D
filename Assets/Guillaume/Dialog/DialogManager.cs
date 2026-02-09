@@ -46,6 +46,7 @@ public class DialogManager : MonoBehaviour
         public Image SpeakerImageOne;
         public Image SpeakerImageTwo;
         public Image BG;
+        public Image TextBox;
     }
 
     [Header("UI Views")]
@@ -252,11 +253,11 @@ public class DialogManager : MonoBehaviour
 
         if (currentNode.IsSpeakerOnLeft != false)
         {
-            currentView.BG.sprite = OnLeft;
+            currentView.TextBox.sprite = OnLeft;
         }
         else
         {
-                currentView.BG.sprite = OnRight;
+                currentView.TextBox.sprite = OnRight;
         }
 
 
