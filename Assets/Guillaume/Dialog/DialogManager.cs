@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -20,9 +21,11 @@ public class DialogManager : MonoBehaviour
     public RuntimeDialogGraph RuntimeGraph;
     public GameManager GM;
 
-    public List<TestScriptableObject> CurrentObject = new List<TestScriptableObject>();
+    public List<PnjScript> CurrentObject = new List<PnjScript>();
 
     public bool IsDialogueStarted;
+
+    public RuntimeDialogGraph CurrentDialogGraph;
 
 
     [Header("Localization")]
@@ -36,9 +39,13 @@ public class DialogManager : MonoBehaviour
     public class DialogView
     {
         public GameObject Root;
-        public TextMeshProUGUI SpeakerText;
+        public TextMeshProUGUI SpeakerTextOne;
+        public TextMeshProUGUI SpeakerTextTwo;
         public TextMeshProUGUI BodyText;
         public Transform ChoiceContainer;
+        public Image SpeakerImageOne;
+        public Image SpeakerImageTwo;
+        public Image BG;
     }
 
     [Header("UI Views")]
@@ -46,6 +53,8 @@ public class DialogManager : MonoBehaviour
     //public DialogView PopupView; 
     //public DialogView BubbleView;
     public Button ChoiceButtonPrefab;
+    public Sprite OnLeft;
+    public Sprite OnRight;
 
 
     private Dictionary<string, RuntimeDialogNode> nodeLookup = new Dictionary<string, RuntimeDialogNode>();
@@ -62,12 +71,21 @@ public class DialogManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (var node in RuntimeGraph.AllNodes)
+
+        for(int i = 0; i < CurrentObject.Count; i++)
         {
-            nodeLookup[node.NodeId] = node;
+            RuntimeDialogGraph rdg = CurrentObject[i].dialogGraph;
+            foreach (var node in rdg.AllNodes)
+            {
+                nodeLookup[node.NodeId] = node;
+            }
         }
 
-        if (PanelView.Root) PanelView.Root.SetActive(false);
+        if (PanelView.Root)
+        {
+            PanelView.Root.SetActive(false);
+            PanelView.BG.gameObject.SetActive(false);
+        }
         //if (PopupView.Root) PopupView.Root.SetActive(false);
         //if (BubbleView.Root) BubbleView.Root.SetActive(false);
 
@@ -173,25 +191,19 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
-
-        if (Keyboard.current.pKey.wasPressedThisFrame && currentNode != null && currentNode.Choices.Count == 0 && GM.ShowDialogue)
+        if (GM.CanShowDialogue && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (!string.IsNullOrEmpty(currentNode.NextNodeId))
+            if (!PanelView.Root.activeInHierarchy && CurrentDialogGraph)
+            {
+                PanelView.Root.SetActive(true);
+                PanelView.BG.gameObject.SetActive(true);
+                GM.IsInDialogue = true;
+                ShowNode(CurrentDialogGraph.EntryNodeId);
+            }        
+            else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0)
             {
                 ShowNode(currentNode.NextNodeId);
             }
-            else
-            {
-                EndDialogue();
-            }
-        }
-
-        if (!PanelView.Root.activeInHierarchy && GM.ShowDialogue && Keyboard.current.eKey.wasPressedThisFrame)
-        {
-            PanelView.Root.SetActive(true);
-            ShowNode(RuntimeGraph.EntryNodeId);
-            Debug.Log(RuntimeGraph.EntryNodeId);
-            Debug.Log(currentNode.NextNodeId);
         }
     }
 
@@ -200,6 +212,8 @@ public class DialogManager : MonoBehaviour
         if (!nodeLookup.ContainsKey(nodeId))
         {
             EndDialogue();
+            GameManager.Instance.IsInDialogue = false;
+            GameManager.Instance.CanShowDialogue = false;
             return;
         }
         currentNode = nodeLookup[nodeId];
@@ -209,17 +223,42 @@ public class DialogManager : MonoBehaviour
         if (currentView != targetView)
         {
             if (currentView != null && currentView.Root != null)
+            {
                 currentView.Root.SetActive(false);
+                currentView.BG.gameObject.SetActive(false);
+            }
 
             targetView.Root.SetActive(true);
             currentView = targetView;
         }
 
-        if (currentView.SpeakerText != null)
-            currentView.SpeakerText.text = GetText(currentNode.SpeakerName);
+        if (currentView.SpeakerTextOne != null)
+            currentView.SpeakerTextOne.text = GetText(currentNode.SpeakerNameOne);
+        
+        if (currentView.SpeakerTextTwo != null)
+            currentView.SpeakerTextTwo.text = GetText(currentNode.SpeakerNameTwo);
 
         if (currentView.BodyText != null)
             currentView.BodyText.text = GetText(currentNode.DialogueText);
+
+        if (currentView.SpeakerImageOne != null)
+            currentView.SpeakerImageOne.sprite = currentNode.SpeakerSpriteOne;
+        
+        if (currentView.SpeakerImageTwo != null)
+            currentView.SpeakerImageTwo.sprite = currentNode.SpeakerSpriteTwo;
+
+        if(currentView.BG != null)
+            currentView.BG.sprite = currentNode.BackgroundSprite;
+
+        if (currentNode.IsSpeakerOnLeft != false)
+        {
+            currentView.BG.sprite = OnLeft;
+        }
+        else
+        {
+                currentView.BG.sprite = OnRight;
+        }
+
 
         if (currentView.ChoiceContainer != null)
         {
@@ -253,6 +292,7 @@ public class DialogManager : MonoBehaviour
         if (currentView != null && currentView.Root != null)
         {
             currentView.Root.SetActive(false);
+            currentView.BG.gameObject.SetActive(false);
 
             // Nettoyage des boutons
             if (currentView.ChoiceContainer != null)
@@ -268,8 +308,6 @@ public class DialogManager : MonoBehaviour
     {
         switch (mode)
         {
-            //case DialogueMode.Popup: return PopupView;
-            //case DialogueMode.Bulle: return BubbleView;
             case DialogueMode.Panel:
             default: return PanelView;
         }

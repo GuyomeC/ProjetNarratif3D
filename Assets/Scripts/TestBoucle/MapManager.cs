@@ -39,7 +39,7 @@ public class MapManager : MonoBehaviour
         if(TileId == 5)
         {
             Debug.Log("Test");
-            GM.ShowDialogue = true;
+            GM.CanShowDialogue = true;
         }
     }
 

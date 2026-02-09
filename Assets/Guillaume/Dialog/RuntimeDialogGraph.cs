@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class RuntimeDialogGraph : ScriptableObject
 {
@@ -13,10 +14,15 @@ public class RuntimeDialogGraph : ScriptableObject
 public class RuntimeDialogNode
 {
     public string NodeId;
-    public string SpeakerName;
+    public Sprite BackgroundSprite;
+    public string SpeakerNameOne;
+    public string SpeakerNameTwo;
     public string DialogueText;
+    public Sprite SpeakerSpriteOne;
+    public Sprite SpeakerSpriteTwo;
     public List<ChoiceData> Choices = new List<ChoiceData>();
     public string NextNodeId;
+    public bool IsSpeakerOnLeft;
 
     public DialogueMode Mode;
 }
