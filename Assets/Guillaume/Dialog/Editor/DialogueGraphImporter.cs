@@ -45,6 +45,10 @@ public class DialogueGraphImporter : ScriptedImporter
             {
                 ProcessChoiceNode(choiceNode, runtimeNode, nodeIDMap);
             }
+            else if(iNode is NarrateurNode narrateurNode)
+            {
+                ProcessNarrateurNode(narrateurNode, runtimeNode, nodeIDMap);
+            }
 
             runtimeGraph.AllNodes.Add(runtimeNode);
         }
@@ -86,12 +90,16 @@ public class DialogueGraphImporter : ScriptedImporter
         }
         else
         {
-            runtimeNode.Mode = DialogueMode.Panel;
+            runtimeNode.Mode = DialogueMode.Discussion;
         }
     }
 
-        
-  
+
+    private void ProcessNarrateurNode(NarrateurNode node, RuntimeDialogNode runtimeNode, Dictionary<INode, string> nodeIDMap)
+    {
+        node.GetNodeOptionByName(DialogueNode.DialogueOpt).TryGetValue(out DialogKey dialogueKey);
+        runtimeNode.DialogueText = dialogueKey.ToString();
+    }
 
     private void ProcessChoiceNode(ChoiceNode node, RuntimeDialogNode runtimeNode, Dictionary<INode, string> nodeIDMap)
     {
@@ -133,7 +141,7 @@ public class DialogueGraphImporter : ScriptedImporter
         }
         else
         {
-            runtimeNode.Mode = DialogueMode.Panel;
+            runtimeNode.Mode = DialogueMode.Discussion;
         }
 
     }

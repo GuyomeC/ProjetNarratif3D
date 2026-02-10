@@ -36,7 +36,6 @@ public class  ChoiceData
 
 public enum DialogueMode
 {
-    Panel,
-    Popup,
-    Bulle
+    Discussion,
+    Narrateur
 }

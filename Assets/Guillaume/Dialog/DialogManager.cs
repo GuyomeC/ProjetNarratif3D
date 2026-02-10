@@ -56,6 +56,7 @@ public class DialogManager : MonoBehaviour
     public Button ChoiceButtonPrefab;
     public Sprite OnLeft;
     public Sprite OnRight;
+    public Sprite TextBoxNarrateur;
 
 
     private Dictionary<string, RuntimeDialogNode> nodeLookup = new Dictionary<string, RuntimeDialogNode>();
@@ -73,7 +74,7 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
 
-        for(int i = 0; i < CurrentObject.Count; i++)
+        for (int i = 0; i < CurrentObject.Count; i++)
         {
             RuntimeDialogGraph rdg = CurrentObject[i].dialogGraph;
             foreach (var node in rdg.AllNodes)
@@ -87,18 +88,6 @@ public class DialogManager : MonoBehaviour
             PanelView.Root.SetActive(false);
             PanelView.BG.gameObject.SetActive(false);
         }
-        //if (PopupView.Root) PopupView.Root.SetActive(false);
-        //if (BubbleView.Root) BubbleView.Root.SetActive(false);
-
-        //if (!string.IsNullOrEmpty(RuntimeGraph.EntryNodeId))
-        //{
-        //    ShowNode(RuntimeGraph.EntryNodeId);
-        //}
-        //else
-        //{
-        //    EndDialogue();
-        //}
-
     }
 
     public void SetLanguage(int languageIndex)
@@ -200,7 +189,7 @@ public class DialogManager : MonoBehaviour
                 PanelView.BG.gameObject.SetActive(true);
                 GM.IsInDialogue = true;
                 ShowNode(CurrentDialogGraph.EntryNodeId);
-            }        
+            }
             else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0)
             {
                 ShowNode(currentNode.NextNodeId);
@@ -210,6 +199,7 @@ public class DialogManager : MonoBehaviour
 
     private void ShowNode(string nodeId)
     {
+        Debug.Log($"Affichage du noeud : {nodeId}");
         if (!nodeLookup.ContainsKey(nodeId))
         {
             EndDialogue();
@@ -218,6 +208,9 @@ public class DialogManager : MonoBehaviour
             return;
         }
         currentNode = nodeLookup[nodeId];
+
+        Debug.Log($"Noeud trouvé : {currentNode.NodeId} avec mode {currentNode.Mode}");
+        Debug.Log("NodeLookup : " + nodeLookup[nodeId].DialogueText);
 
         DialogView targetView = GetViewForMode(currentNode.Mode);
 
@@ -235,7 +228,7 @@ public class DialogManager : MonoBehaviour
 
         if (currentView.SpeakerTextOne != null)
             currentView.SpeakerTextOne.text = GetText(currentNode.SpeakerNameOne);
-        
+
         if (currentView.SpeakerTextTwo != null)
             currentView.SpeakerTextTwo.text = GetText(currentNode.SpeakerNameTwo);
 
@@ -244,20 +237,31 @@ public class DialogManager : MonoBehaviour
 
         if (currentView.SpeakerImageOne != null)
             currentView.SpeakerImageOne.sprite = currentNode.SpeakerSpriteOne;
-        
+
         if (currentView.SpeakerImageTwo != null)
             currentView.SpeakerImageTwo.sprite = currentNode.SpeakerSpriteTwo;
 
-        if(currentView.BG != null)
+        if (currentView.BG != null)
             currentView.BG.sprite = currentNode.BackgroundSprite;
 
         if (currentNode.IsSpeakerOnLeft != false)
         {
             currentView.TextBox.sprite = OnLeft;
+            currentView.SpeakerTextTwo.gameObject.SetActive(false);
+            currentView.SpeakerTextOne.gameObject.SetActive(true);
         }
-        else
+        else if (currentNode.IsSpeakerOnLeft == false)
         {
-                currentView.TextBox.sprite = OnRight;
+            currentView.TextBox.sprite = OnRight;
+            currentView.SpeakerTextOne.gameObject.SetActive(false);
+            currentView.SpeakerTextTwo.gameObject.SetActive(true);
+        }
+
+        if(currentNode.Mode == DialogueMode.Narrateur)
+        {
+            currentView.SpeakerTextOne.gameObject.SetActive(false);
+            currentView.SpeakerTextTwo.gameObject.SetActive(false);
+            currentView.TextBox.sprite = TextBoxNarrateur;   
         }
 
 
@@ -295,7 +299,6 @@ public class DialogManager : MonoBehaviour
             currentView.Root.SetActive(false);
             currentView.BG.gameObject.SetActive(false);
 
-            // Nettoyage des boutons
             if (currentView.ChoiceContainer != null)
             {
                 foreach (Transform child in currentView.ChoiceContainer) Destroy(child.gameObject);
@@ -309,7 +312,7 @@ public class DialogManager : MonoBehaviour
     {
         switch (mode)
         {
-            case DialogueMode.Panel:
+            case DialogueMode.Discussion:
             default: return PanelView;
         }
     }
