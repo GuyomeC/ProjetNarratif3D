@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 43.2
+    y: 0
     width: 1536
     height: 36
   m_SerializedDataModeController:
@@ -628,23 +628,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1536
-      height: 719.8
-    m_Scale: {x: 0.75829387, y: 0.75829387}
-    m_Translation: {x: 768, y: 359.9}
+      width: 778.80005
+      height: 440.2
+    m_Scale: {x: 0.3844787, y: 0.3844787}
+    m_Translation: {x: 389.40002, y: 220.1}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1012.8
-      y: -474.6181
-      width: 2025.6
-      height: 949.2362
+      x: -1012.80005
+      y: -572.4635
+      width: 2025.6001
+      height: 1144.927
     m_MinimalGUI: 1
-  m_defaultScale: 0.75829387
-  m_LastWindowPixelSize: {x: 1920, y: 926}
+  m_defaultScale: 0.3844787
+  m_LastWindowPixelSize: {x: 778.80005, y: 461.2}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79.200005
+    y: 24
     width: 359
     height: 461.2
   m_SerializedDataModeController:
@@ -692,10 +692,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs:
-      - m_Data: 286456
+      m_SelectedIDs: []
       m_LastClickedID:
-        m_Data: 286456
+        m_Data: 0
       m_ExpandedIDs:
       - m_Data: -132192
       - m_Data: -129534
@@ -803,8 +802,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 360
-    y: 79.200005
+    x: 361
+    y: 24
     width: 778.80005
     height: 461.2
   m_SerializedDataModeController:
@@ -1417,7 +1416,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 566.4
+    y: 511.2
     width: 1139.8
     height: 251.59998
   m_SerializedDataModeController:
@@ -1468,16 +1467,14 @@ MonoBehaviour:
       m_Data: 59868
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 59722
-    - m_Data: 59724
-    - m_Data: 59726
-    - m_Data: 59728
-    - m_Data: 59730
-    - m_Data: 59732
-    - m_Data: 59734
-    - m_Data: 59736
-    - m_Data: 59842
-    - m_Data: 1000000000
+    - m_Data: 53178
+    - m_Data: 53180
+    - m_Data: 53182
+    - m_Data: 53184
+    - m_Data: 53186
+    - m_Data: 53188
+    - m_Data: 53190
+    - m_Data: 53192
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1511,15 +1508,14 @@ MonoBehaviour:
       m_Data: 45196
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 59722
-    - m_Data: 59724
-    - m_Data: 59726
-    - m_Data: 59728
-    - m_Data: 59730
-    - m_Data: 59732
-    - m_Data: 59734
-    - m_Data: 59736
-    - m_Data: 1000000000
+    - m_Data: 53178
+    - m_Data: 53180
+    - m_Data: 53182
+    - m_Data: 53184
+    - m_Data: 53186
+    - m_Data: 53188
+    - m_Data: 53190
+    - m_Data: 53192
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1645,8 +1641,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1140.8
-    y: 79.200005
+    x: 1141.8
+    y: 24
     width: 394.19995
     height: 738.8
   m_SerializedDataModeController:
@@ -1690,10 +1686,10 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: DialogGraph
+    m_Text: UnnamedTool
     m_Image: {fileID: 2800000, guid: 0c56166f40756a84881b58334362b766, type: 3}
-    m_Tooltip: DialogGraph
-    m_TextWithWhitespace: "DialogGraph\u200B"
+    m_Tooltip: UnnamedTool
+    m_TextWithWhitespace: "UnnamedTool\u200B"
   m_Pos:
     serializedVersion: 2
     x: 1140.8
@@ -1888,10 +1884,10 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: GraphPNJ2
+    m_Text: UnnamedTool
     m_Image: {fileID: 2800000, guid: 0c56166f40756a84881b58334362b766, type: 3}
-    m_Tooltip: GraphPNJ2
-    m_TextWithWhitespace: "GraphPNJ2\u200B"
+    m_Tooltip: UnnamedTool
+    m_TextWithWhitespace: "UnnamedTool\u200B"
   m_Pos:
     serializedVersion: 2
     x: 1140.8
@@ -2086,10 +2082,10 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: FilleScene2
+    m_Text: UnnamedTool
     m_Image: {fileID: 2800000, guid: 0c56166f40756a84881b58334362b766, type: 3}
-    m_Tooltip: FilleScene2
-    m_TextWithWhitespace: "FilleScene2\u200B"
+    m_Tooltip: UnnamedTool
+    m_TextWithWhitespace: "UnnamedTool\u200B"
   m_Pos:
     serializedVersion: 2
     x: 1140.8

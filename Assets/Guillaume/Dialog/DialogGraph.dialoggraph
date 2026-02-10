@@ -597,11 +597,11 @@ MonoBehaviour:
     - rid: 8154959144290877689
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: a122faeb0c6d8f744b54ad540780098d, type: 3}
+        m_Value: {fileID: 21300000, guid: 0ca605a78c5aae14da4cb7c6c18b4d10, type: 3}
     - rid: 8154959144290877690
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: 020e11353f540614d9da59cf3cd75851, type: 3}
+        m_Value: {fileID: 21300000, guid: 1139fd2321fb2064db108b97fb14d729, type: 3}
     - rid: 8154959144290877691
       type: {class: EnumConstant, ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -627,11 +627,11 @@ MonoBehaviour:
     - rid: 8154959144290877693
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: 97608bba6ac405a4caebbcc2cfd8a92e, type: 3}
+        m_Value: {fileID: 21300000, guid: 0ca605a78c5aae14da4cb7c6c18b4d10, type: 3}
     - rid: 8154959144290877694
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: b573c30c1126be141acb53c4133e4c4f, type: 3}
+        m_Value: {fileID: 21300000, guid: 1139fd2321fb2064db108b97fb14d729, type: 3}
     - rid: 8154959144290877695
       type: {class: EnumConstant, ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -657,11 +657,11 @@ MonoBehaviour:
     - rid: 8154959144290877697
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: a4214b23681a2a848855809f50b76821, type: 3}
+        m_Value: {fileID: 21300000, guid: 0ca605a78c5aae14da4cb7c6c18b4d10, type: 3}
     - rid: 8154959144290877698
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: 5da1c51de5071514ba3c9cdbeadc37df, type: 3}
+        m_Value: {fileID: 21300000, guid: 1139fd2321fb2064db108b97fb14d729, type: 3}
     - rid: 8154959208602140736
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
