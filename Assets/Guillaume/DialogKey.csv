@@ -44,3 +44,60 @@ en essayant de se faire le moins de de bruit possible.) ";;
 ;;;
 ;;;
 SCENE 04;;;
+dial_Narra_phrase2;"(Hana arrive doucement. 
+Elle tient un objet brillant dans ses mains.)";;
+dial_Narra_phrase3;"(se retourne. 
+ Voit le collier en argent 
+de sa femme dans ses mains.)";;
+dial_Narra_phrase4;(Noboru lui arrache le collier des mains brutalement.);;
+dial_Narra_phrase5;"(Elle part en pleurant. 
+Le silence retombe brutalement.)";;
+dial_Narra_phrase6;"(Noboru reste seul, serre le collier dans son poing. 
+Il l'ouvre et regarde le pendentif.)";;
+dial_Narra_phrase7;(Des gyrophares bleus qui tournent.);;
+dial_Narra_phrase8;"Le bruit d'une sirène d'ambulance 
+qui s'éloigne.";;
+dial_Narra_phrase9;Il est retenu par un pompier,;;
+dial_Narra_phrase10;hurlant le nom de sa femme.;;
+dial_Narra_phrase11;(Noboru serre le collier dans sa main.);;
+dial_Narra_phrase12;(Il regarde la porte de la chambre de sa fille);;
+dial_Narra_phrase13;"(Et réalise qu'il est en train de détruire 
+ce qu'il reste d'elle.)";;
+;;;
+dial_Hana_phrase6; Papa... Regarde.;;
+dial_Hana_phrase7;J'ai trouvé ça sous le canapé.;;
+;;;
+dial_Noboru_phrase11;Donne moi ça !;;
+dial_Noboru_phrase12;Ne touche pas à ses affaires !;;
+dial_Noboru_phrase13;File dans ta chambre !;;
+dial_Noboru_phrase14;Je ne veux plus te voir ! Dégage !;;
+;;;
+SCENE 05;;;
+dial_Narra_phrase14;(Noboru est rasé, habillé proprement mais est très nerveux.);;
+dial_Narra_phrase15;Il tient un sac cadeau.;;
+dial_Narra_phrase16;Elle sort de sa chambre;;
+dial_Narra_phrase17; méfiante, rasant les murs.;;
+dial_Narra_phrase18;(Elle approche, hésitante.);;
+dial_Narra_phrase19;(s'accroupit à sa hauteur);;
+dial_Narra_phrase20;(Elle ouvre timidement le sac.);;
+dial_Narra_phrase21;(C'est le jouet dont elle rêvait .);;
+dial_Narra_phrase22;(Elle ne bouge pas, ne sait pas comment réagir);;
+dial_Narra_phrase23;(Elle lui prend la main.);;
+dial_Narra_phrase24;(Ils sortent de l'appartement sombre vers la lumière du jour.);;
+;;;
+dial_Noboru_phrase15;Viens voir... S'il te plaît.;;
+dial_Noboru_phrase16;(lui tend un sac) C'est pour toi.;;
+dial_Noboru_phrase17;Je... Je suis désolé pour hier.;;
+dial_Noboru_phrase18;Et pour avant.;;
+dial_Noboru_phrase19;Je vais arrêter de crier.;;
+dial_Noboru_phrase20;Je te le promets.;;
+dial_Noboru_phrase21;(En souriant) ;;
+dial_Noboru_phrase22;Mets tes chaussures. On sort.;;
+dial_Noboru_phrase23;On va au parc d'attractions.;;
+dial_Noboru_phrase24;Juste toi et moi.;;
+dial_Noboru_phrase25;Le grand parc.;;
+dial_Noboru_phrase26; Allez, viens.;;
+;;;
+dial_Hana_phrase8;(D'une voix faible) Merci...;;
+dial_Hana_phrase9;"(avec des yeux qui brille) 
+ Vraiment ? Le grand parc ?";;

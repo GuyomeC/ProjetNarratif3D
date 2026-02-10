@@ -693,11 +693,11 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 50220
+      - m_Data: 50114
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1524
+      - m_Data: -1296
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 15.313456, y: 0.94846344, z: 5.1860065}
     speed: 2
-    m_Value: {x: 1782.2164, y: 879.2196, z: 2289.4897}
+    m_Value: {x: 15.313456, y: 0.94846344, z: 5.1860065}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1298,11 +1298,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.06373962, y: 0.90463734, z: -0.3955744, w: -0.1459218}
     speed: 2
-    m_Value: {x: -0.00420952, y: -0.0026983537, z: -0.0001354102, w: -1.0001525}
+    m_Value: {x: -0.06373313, y: 0.90454525, z: -0.39553413, w: -0.14590694}
   m_Size:
     m_Target: 16.671074
     speed: 2
-    m_Value: 1350.5826
+    m_Value: 16.671074
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1404,14 +1404,14 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 56.400024}
     m_SelectedIDs:
-    - m_Data: 50166
+    - m_Data: 50086
     m_LastClickedID:
-      m_Data: 50166
+      m_Data: 50086
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 49838
-    - m_Data: 49840
-    - m_Data: 49842
+    - m_Data: 49760
+    - m_Data: 49762
+    - m_Data: 49764
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1446,9 +1446,9 @@ MonoBehaviour:
       m_Data: 45196
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 49838
-    - m_Data: 49840
-    - m_Data: 49842
+    - m_Data: 49760
+    - m_Data: 49762
+    - m_Data: 49764
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1476,8 +1476,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 50220
-    m_LastClickedInstanceID: 50220
+    - m_Data: 50114
+    m_LastClickedInstanceID: 50114
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 55128
