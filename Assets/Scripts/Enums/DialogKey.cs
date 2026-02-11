@@ -72,9 +72,11 @@ public enum DialogKey
 	dial_narra_scene4_phrase1,
 	dial_narra_scene4_phrase2,
 	dial_narra_scene4_phrase3,
+	dial_girl_scene5_phrase4,
 	dial_girl_scene5_phrase1,
 	dial_girl_scene5_phrase2,
 	dial_girl_scene5_phrase3,
+	dial_girl_scene5_phrase0,
 	dial_nicefather_scene5_phrase1,
 	dial_nicefather_scene5_phrase2,
 	dial_nicefather_scene5_phrase3,
@@ -89,4 +91,5 @@ public enum DialogKey
 	dial_nicefather_scene5_phrase12,
 	dial_narra_scene5_phrase1,
 	dial_narra_scene5_phrase2,
+	dial_narra_scene5_phrase3,
 }
