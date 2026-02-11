@@ -45,13 +45,31 @@ public class DialogueNode : Node
     protected override void OnDefineOptions(IOptionDefinitionContext context)
     {
         context.AddOption<Sprite>(bgSprite).WithDefaultValue(null);
-        context.AddOption<DialogueMode>(modeId).WithDefaultValue(DialogueMode.Panel).Delayed();
+        context.AddOption<DialogueMode>(modeId).WithDefaultValue(DialogueMode.Discussion).Delayed();
         context.AddOption<NameKey>(SpeakerOptOne).WithDefaultValue(NameKey.None);
         context.AddOption<NameKey>(SpeakerOptTwo).WithDefaultValue(NameKey.None);
         context.AddOption<DialogKey>(DialogueOpt).WithDefaultValue(DialogKey.None);
         context.AddOption<Sprite>(speakerSpriteOne).WithDefaultValue(null);
         context.AddOption<Sprite>(speakerSpriteTwo).WithDefaultValue(null);
         context.AddOption<bool>(IsSpeakerOnLeft).WithDefaultValue(true);
+    }
+}
+
+public class NarrateurNode : Node
+{
+    public const string DialogueOpt = "Dialogue Key";
+    public const string modeId = "Mode";
+
+    protected override void OnDefinePorts(IPortDefinitionContext context)
+    {
+        context.AddInputPort("in").Build();
+        context.AddOutputPort("out").Build();
+    }
+
+    protected override void OnDefineOptions(IOptionDefinitionContext context)
+    {
+        context.AddOption<DialogKey>(DialogueOpt).WithDefaultValue(DialogKey.None);
+        context.AddOption<DialogueMode>(modeId).WithDefaultValue(DialogueMode.Narrateur).Delayed();
     }
 }
 
@@ -79,7 +97,7 @@ public class ChoiceNode : Node
 
     protected override void OnDefineOptions(IOptionDefinitionContext context)
     {
-        context.AddOption<DialogueMode>(modeId).WithDefaultValue(DialogueMode.Panel).Delayed();
+        context.AddOption<DialogueMode>(modeId).WithDefaultValue(DialogueMode.Discussion).Delayed();
         context.AddOption<int>(portId).WithDefaultValue(2).Delayed();
         context.AddOption<NameKey>(SpeakerOpt).WithDefaultValue(NameKey.None);
         context.AddOption<DialogKey>(DialogueOpt).WithDefaultValue(DialogKey.None);

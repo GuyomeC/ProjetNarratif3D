@@ -1,103 +1,100 @@
 Key;French;English;Espanol
-SCENE 01;;;
-dial_Noboru_phrase0;Déjà vide ? Putain.;Hello!;Buenos Días !
-dial_Noboru_phrase1;Quoi encore ?;I am the father ;Soy el padre
-dial_Noboru_phrase2;C'est pour ça que tu me dérange ? ;And my name is Adolf;Y mi nombre es Adolf
-dial_Noboru_phrase3;Tu crois que j'ai que ça a faire ?!;;
-dial_Noboru_phrase4;Retourne jouer avec tes peluches;;
-dial_Noboru_phrase5;(s'écroule sur la table, complètement ivre);;
+dial_father_hello;Bonjour !;Hello!;Buenos Días !
+dial_father_phrase1;Je suis le père;I am the father ;Soy el padre
+dial_father_phrase2;Et je m'appelle Adolf;And my name is Adolf;Y mi nombre es Adolf
 ;;;
-dial_Hana_phrase0;Papa ?;hello;hola
-dial_Hana_phrase1;Tu veux bien jouer avec moi ?;i'm the girl;soy la nina
-dial_Hana_phrase2;On joue au salon de thé et-;and my name is Jacqueline;y mi nombre es Jacqueline
-dial_Hana_phrase3;Mais.. ;;
-dial_Hana_phrase4;(Se cache);;
-dial_Hana_phrase5;(Pars);;
-;;;
-SCENE 02;;;
-dial_Noboru_phrase6;(En pleurs) Pardon... je ne voulais pas... ;;
-;;;
-dial_Tokio_phrase0;Regarde moi quand je te parle !;;
-dial_Tokio_phrase1;Et arrête de pleurer ! ;;
-dial_Tokio_phrase2;Tu voulais pas ?;;
-dial_Tokio_phrase3;T’es qu’une petite merde.;;
-dial_Tokio_phrase4;Tu m'entends ?;;
-dial_Tokio_phrase5;T'es inutile.;;
-dial_Tokio_phrase6;(s'accroupit pour lui hurler au visage.);;
-dial_Tokio_phrase7;Tu ne feras jamais rien de ta vie.;;
-dial_Tokio_phrase8;Tu es une merde et tu resteras une merde.;;
-dial_Tokio_phrase9;Dégage de ma vue !;;
-;;;
-Scene 03;;;
-dial_Noboru_phrase7;(Murmure) Sale ordure... ;;
-dial_Noboru_phrase8;Tu peux pas faire moins de bruit ?;;
-dial_Noboru_phrase9;T'es toujours dans mes pattes à rien faire.;;
-dial_Noboru_phrase10;Tu sers vraiment à rien ici.;;
-;;;
-dial_Hana_phrase6;(s'arrête net );;
-dial_Hana_phrase7;(baisse la tête);;
-;;;
-dial_Narra_phrase0;(Un petit bruit attire son attention.);;
-dial_Narra_phrase1;"(Dans un coin de la pièce, 
-la Fille joue silencieusement 
-en essayant de se faire le moins de de bruit possible.) ";;
+dial_girl_hello;bonjour;hello;hola
+dial_girl_phrase1;je suis la fille;i'm the girl;soy la nina
+dial_girl_phrase2;et mon nom c'est Jacqueline;and my name is Jacqueline;y mi nombre es Jacqueline
 ;;;
 ;;;
-SCENE 04;;;
-dial_Narra_phrase2;"(Hana arrive doucement. 
-Elle tient un objet brillant dans ses mains.)";;
-dial_Narra_phrase3;"(se retourne. 
- Voit le collier en argent 
-de sa femme dans ses mains.)";;
-dial_Narra_phrase4;(Noboru lui arrache le collier des mains brutalement.);;
-dial_Narra_phrase5;"(Elle part en pleurant. 
-Le silence retombe brutalement.)";;
-dial_Narra_phrase6;"(Noboru reste seul, serre le collier dans son poing. 
-Il l'ouvre et regarde le pendentif.)";;
-dial_Narra_phrase7;(Des gyrophares bleus qui tournent.);;
-dial_Narra_phrase8;"Le bruit d'une sirène d'ambulance 
-qui s'éloigne.";;
-dial_Narra_phrase9;Il est retenu par un pompier,;;
-dial_Narra_phrase10;hurlant le nom de sa femme.;;
-dial_Narra_phrase11;(Noboru serre le collier dans sa main.);;
-dial_Narra_phrase12;(Il regarde la porte de la chambre de sa fille);;
-dial_Narra_phrase13;"(Et réalise qu'il est en train de détruire 
-ce qu'il reste d'elle.)";;
+dial_girl_scene1_phrase1;Papa?;Dad?;Padre?
+dial_girl_scene1_phrase2;Tu veux bien jouer avec moi?;Do you want to play with me?;
+dial_girl_scene1_phrase3;On pourrait jouer au salon de thé et …;;
+dial_girl_scene1_phrase4;Mais…;But …;
+dial_girl_scene1_phrase5;Non je …;No I …;
+dial_nicefather_scene1_phrase1;Déjà vide putain!;Already empty? Fuck;
+dial_nicefather_scene1_phrase2;Quoi encore??;What again?;
+dial_nicefather_scene1_phrase3;C'est pour ça que tu me dérange?;;
+dial_nicefather_scene1_phrase4;Tu crois que j'ai que ça à faire???;;
+dial_nicefather_scene1_phrase5;Retourne jouer avec tes peluches;Go back play with your dolls;
+dial_narra_scene1_phrase1;Dans son salon, un père, alcoolique, boit pour noyer le chagrin de la perte de sa femme.;;
+dial_narra_scene1_phrase2;La pauvre fille part se réfugier dans sa chambre, effrayée de son père qui refuse son amour.;;
 ;;;
-dial_Hana_phrase6; Papa... Regarde.;;
-dial_Hana_phrase7;J'ai trouvé ça sous le canapé.;;
+dial_narra_scene2_phrase1;20 ans auparavant…;;
+dial_nicefather_scene2_phrase1;Pardon..;;
+dial_nicefather_scene2_phrase2;Je ne voulais pas…;;
 ;;;
-dial_Noboru_phrase11;Donne moi ça !;;
-dial_Noboru_phrase12;Ne touche pas à ses affaires !;;
-dial_Noboru_phrase13;File dans ta chambre !;;
-dial_Noboru_phrase14;Je ne veux plus te voir ! Dégage !;;
+dial_badfather_scene2_phrase1;Regarde moi quand je te parle!!;;
+dial_badfather_scene2_phrase2;Et arrête de pleurer!;;
+dial_badfather_scene2_phrase3;Tu voulais pas?;;
+dial_badfather_scene2_phrase4;T'es qu'une petite merde.;;
+dial_badfather_scene2_phrase5;Tu m'entends?;;
+dial_badfather_scene2_phrase6;T'es inutile!;;
+dial_badfather_scene2_phrase7;Tu feras jamais rien de ta vie.;;
+dial_badfather_scene2_phrase8;Tu es une merde, et tu resteras une merde;;
+dial_badfather_scene2_phrase9;Dégage de ma vue!;;
 ;;;
-SCENE 05;;;
-dial_Narra_phrase14;(Noboru est rasé, habillé proprement mais est très nerveux.);;
-dial_Narra_phrase15;Il tient un sac cadeau.;;
-dial_Narra_phrase16;Elle sort de sa chambre;;
-dial_Narra_phrase17; méfiante, rasant les murs.;;
-dial_Narra_phrase18;(Elle approche, hésitante.);;
-dial_Narra_phrase19;(s'accroupit à sa hauteur);;
-dial_Narra_phrase20;(Elle ouvre timidement le sac.);;
-dial_Narra_phrase21;(C'est le jouet dont elle rêvait .);;
-dial_Narra_phrase22;(Elle ne bouge pas, ne sait pas comment réagir);;
-dial_Narra_phrase23;(Elle lui prend la main.);;
-dial_Narra_phrase24;(Ils sortent de l'appartement sombre vers la lumière du jour.);;
+dial_narra_scene3_phrase1;Réveillé de son cauchemar, il souffre encore de son passé…;;
+dial_nicefather_scene3_phrase1;Sale ordure…;;
+dial_nicefather_scene3_phrase2;Tu peux pas faire moins de bruit?;;
+dial_nicefather_scene3_phrase3;T'es toujours dans mes pattes à rien faire;;
+dial_nicefather_scene3_phrase4;Tu sers vraiment à rien.;;
+dial_narra_scene3_phrase2;La petite fille terrorisé joue dans son coin, ayant peur des réprimandes de son père.;;
 ;;;
-dial_Noboru_phrase15;Viens voir... S'il te plaît.;;
-dial_Noboru_phrase16;(lui tend un sac) C'est pour toi.;;
-dial_Noboru_phrase17;Je... Je suis désolé pour hier.;;
-dial_Noboru_phrase18;Et pour avant.;;
-dial_Noboru_phrase19;Je vais arrêter de crier.;;
-dial_Noboru_phrase20;Je te le promets.;;
-dial_Noboru_phrase21;(En souriant) ;;
-dial_Noboru_phrase22;Mets tes chaussures. On sort.;;
-dial_Noboru_phrase23;On va au parc d'attractions.;;
-dial_Noboru_phrase24;Juste toi et moi.;;
-dial_Noboru_phrase25;Le grand parc.;;
-dial_Noboru_phrase26; Allez, viens.;;
+dial_girl_scene4_phrase1;Papa…  Regarde;;
+dial_girl_scene4_phrase2;J'ai trouvé ca sous le canapé;;
 ;;;
-dial_Hana_phrase8;(D'une voix faible) Merci...;;
-dial_Hana_phrase9;"(avec des yeux qui brille) 
- Vraiment ? Le grand parc ?";;
+dial_nicefather_scene4_phrase1;Donne moi ca!;;
+dial_nicefather_scene4_phrase2;Touche pas à ces affaires!;;
+dial_nicefather_scene4_phrase3;File dans ta chambre!;;
+dial_nicefather_scene4_phrase4;Jveux plus te voir;;
+dial_nicefather_scene4_phrase5;Dégage!;;
+dial_nicefather_scene4_phrase6;Tu me manque tellement…;;
+dial_nicefather_scene4_phrase7;Pourquoi es-tu parti?;;
+dial_nicefather_scene4_phrase8;Pourquoi as-t'il fallu que tu donne ta vie pour elle?;;
+dial_nicefather_scene4_phrase9;Comment puis-je ne pas lui en vouloir?;;
+dial_nicefather_scene4_phrase10;Elle te ressemble tellement;;
+dial_nicefather_scene4_phrase11;Le simple fait de la voir me rappele la personne que tu étais;;
+dial_nicefather_scene4_phrase12;Ces souvenirs m'attristent..;;
+dial_nicefather_scene4_phrase13;Et me terrorisent;;
+dial_nicefather_scene4_phrase14;Je sais que je devrais changer;;
+dial_nicefather_scene4_phrase15;et que je devrais m'occuper d'elle.;;
+dial_nicefather_scene4_phrase16;Mais, je ne sais pas comment faire;;
+dial_nicefather_scene4_phrase17;Mon père n'a jamais réussi à le faire;;
+dial_nicefather_scene4_phrase18;et tu n'es plus la pour prendre soin d'elle.;;
+dial_nicefather_scene4_phrase19;Je ne sais pas quoi faire;;
+dial_nicefather_scene4_phrase20;Aide moi;;
+;;;
+dial_mother_scene4_phrase1;Je ne vous quitterai jamais.;;
+dial_mother_scene4_phrase2;Je ne cesserai jamais d'être avec vous;;
+dial_mother_scene4_phrase3;Mon amour,;;
+dial_mother_scene4_phrase4;tu ne dois pas lui en vouloir de ma mort,;;
+dial_mother_scene4_phrase5;ce n'est pas de sa faute.;;
+dial_mother_scene4_phrase6;Tu ne dois pas la fuir.;;
+dial_mother_scene4_phrase7;Elle est un cadeau pour réparer les cicatrices du passé;;
+dial_mother_scene4_phrase8;Tu dois dépasser ta peur de ce que tu as vécu, ;;
+dial_mother_scene4_phrase9;Afin qu'elle puisse t'apporter le bonheur que tu mérite;;
+dial_mother_scene4_phrase10;Toujours…;;
+dial_narra_scene4_phrase1;La petite fille arrive toute contente d'avoir trouvé le collier de sa mère…;;
+dial_narra_scene4_phrase2;Attristé par la mort de sa femme, les souvenirs de sa mort reviennent dans son esprit.;;
+dial_narra_scene4_phrase3;De retour dans le présent, il commence à se demander ce qu'il doit faire…;;
+;;;
+dial_girl_scene5_phrase1;Merci…;;
+dial_girl_scene5_phrase2;Vraiment?;;
+dial_girl_scene5_phrase3;Le grand parc??;;
+;;;
+dial_nicefather_scene5_phrase1;Viens voir… s'il te plait.;;
+dial_nicefather_scene5_phrase2;C'est pour toi.;;
+dial_nicefather_scene5_phrase3;Je, je suis désolé pour hier.;;
+dial_nicefather_scene5_phrase4;Et pour avant.;;
+dial_nicefather_scene5_phrase5;Je vais arrêter de crier.;;
+dial_nicefather_scene5_phrase6;Je te le promets.;;
+dial_nicefather_scene5_phrase7;Mets tes chaussures.;;
+dial_nicefather_scene5_phrase8;On sort.;;
+dial_nicefather_scene5_phrase9;On va au parc d'attractions.;;
+dial_nicefather_scene5_phrase10;Juste toi et moi.;;
+dial_nicefather_scene5_phrase11;Oui le grand parc.;;
+dial_nicefather_scene5_phrase12;Aller viens.;;
+dial_narra_scene5_phrase1;Il commence à se reprendre en main et à changer…;;
+dial_narra_scene5_phrase2;Heureux de changer, ils s'en vont vers leur nouvelle vie.;;
