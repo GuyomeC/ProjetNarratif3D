@@ -2858,7 +2858,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: ad31559f48d71430d5542823e98c5f0a
         m_Version: 2
-        m_Position: {x: 18704.05, y: 84.45724}
+        m_Position: {x: 18692.787, y: 84.45724}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
