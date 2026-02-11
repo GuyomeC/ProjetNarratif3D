@@ -37,6 +37,7 @@ public enum DialogKey
 	dial_nicefather_scene3_phrase3,
 	dial_nicefather_scene3_phrase4,
 	dial_narra_scene3_phrase2,
+	dial_girl_scene3_phrase1,
 	dial_girl_scene4_phrase1,
 	dial_girl_scene4_phrase2,
 	dial_nicefather_scene4_phrase1,
