@@ -226,11 +226,36 @@ public class DialogManager : MonoBehaviour
             currentView = targetView;
         }
 
-        if (currentView.SpeakerTextOne != null)
-            currentView.SpeakerTextOne.text = GetText(currentNode.SpeakerNameOne);
+        if(currentNode.Mode == DialogueMode.Narrateur)
+        {
+            currentView.SpeakerTextOne.gameObject.SetActive(false);
+            currentView.SpeakerTextTwo.gameObject.SetActive(false);
+            currentView.TextBox.sprite = TextBoxNarrateur;   
+        }
+        else
+        {
+            currentView.SpeakerTextOne.gameObject.SetActive(true);
+            currentView.SpeakerTextTwo.gameObject.SetActive(true);
+            if (currentNode.IsSpeakerOnLeft != false)
+            {
+                currentView.TextBox.sprite = OnLeft;
+                currentView.SpeakerTextTwo.gameObject.SetActive(false);
+                currentView.SpeakerTextOne.gameObject.SetActive(true);
+            }
+            else if (currentNode.IsSpeakerOnLeft == false)
+            {
+                currentView.TextBox.sprite = OnRight;
+                currentView.SpeakerTextOne.gameObject.SetActive(false);
+                currentView.SpeakerTextTwo.gameObject.SetActive(true);
+            }
 
-        if (currentView.SpeakerTextTwo != null)
-            currentView.SpeakerTextTwo.text = GetText(currentNode.SpeakerNameTwo);
+            if (currentView.SpeakerTextOne != null)
+                currentView.SpeakerTextOne.text = GetText(currentNode.SpeakerNameOne);
+
+            if (currentView.SpeakerTextTwo != null)
+                currentView.SpeakerTextTwo.text = GetText(currentNode.SpeakerNameTwo);
+        }
+
 
         if (currentView.BodyText != null)
             currentView.BodyText.text = GetText(currentNode.DialogueText);
@@ -244,25 +269,7 @@ public class DialogManager : MonoBehaviour
         if (currentView.BG != null)
             currentView.BG.sprite = currentNode.BackgroundSprite;
 
-        if (currentNode.IsSpeakerOnLeft != false)
-        {
-            currentView.TextBox.sprite = OnLeft;
-            currentView.SpeakerTextTwo.gameObject.SetActive(false);
-            currentView.SpeakerTextOne.gameObject.SetActive(true);
-        }
-        else if (currentNode.IsSpeakerOnLeft == false)
-        {
-            currentView.TextBox.sprite = OnRight;
-            currentView.SpeakerTextOne.gameObject.SetActive(false);
-            currentView.SpeakerTextTwo.gameObject.SetActive(true);
-        }
 
-        if(currentNode.Mode == DialogueMode.Narrateur)
-        {
-            currentView.SpeakerTextOne.gameObject.SetActive(false);
-            currentView.SpeakerTextTwo.gameObject.SetActive(false);
-            currentView.TextBox.sprite = TextBoxNarrateur;   
-        }
 
 
         if (currentView.ChoiceContainer != null)

@@ -4501,8 +4501,7 @@ Transform:
   m_LocalPosition: {x: -1.6847701, y: 1, z: 1.4359503}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 999983858}
+  m_Children: []
   m_Father: {fileID: 163031412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &86973509
@@ -26735,7 +26734,7 @@ PrefabInstance:
     - target: {fileID: 4865072751266803248, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
       propertyPath: dialogGraph
       value: 
-      objectReference: {fileID: 3965311268370046156, guid: be9d1c8515b5a0f40b9e925fa8f3eac1, type: 3}
+      objectReference: {fileID: 3965311268370046156, guid: c1d7ad62b13ea4a42a7d30be443e0d28, type: 3}
     - target: {fileID: 7941046017712992440, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
       propertyPath: m_Name
       value: PNJPrefab
@@ -50249,22 +50248,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992369171}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &999983858 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-  m_PrefabInstance: {fileID: 8972281289262163718}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &999983862 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4865072751266803248, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-  m_PrefabInstance: {fileID: 8972281289262163718}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd8b4483e2b070c489d50630cbf98123, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PnjScript
 --- !u!1 &1000117374
 GameObject:
   m_ObjectHideFlags: 0
@@ -51298,7 +51281,7 @@ PrefabInstance:
     - target: {fileID: 4865072751266803248, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
       propertyPath: dialogGraph
       value: 
-      objectReference: {fileID: 3965311268370046156, guid: be9d1c8515b5a0f40b9e925fa8f3eac1, type: 3}
+      objectReference: {fileID: 3965311268370046156, guid: 119c95d28f53d544cb7be56f41874a19, type: 3}
     - target: {fileID: 7941046017712992440, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
       propertyPath: m_Name
       value: PNJPrefab
@@ -51353,6 +51336,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
   m_PrefabInstance: {fileID: 1032654596}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1032654598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4865072751266803248, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
+  m_PrefabInstance: {fileID: 1032654596}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8b4483e2b070c489d50630cbf98123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PnjScript
 --- !u!1 &1032823965
 GameObject:
   m_ObjectHideFlags: 0
@@ -53301,9 +53295,11 @@ MonoBehaviour:
   RuntimeGraph: {fileID: 3965311268370046156, guid: 77fac47eedc34a64a96d382b20b68065, type: 3}
   GM: {fileID: 1910581958}
   CurrentObject:
-  - {fileID: 999983862}
-  - {fileID: 0}
   - {fileID: 43814334}
+  - {fileID: 1539714917}
+  - {fileID: 1032654598}
+  - {fileID: 2121403514}
+  - {fileID: 1420528986}
   IsDialogueStarted: 0
   CurrentDialogGraph: {fileID: 0}
   LocalizationNameCSV: {fileID: 4900000, guid: 26f4b4c05fad2d24198b3b3cc8899d08, type: 3}
@@ -70240,7 +70236,7 @@ PrefabInstance:
     - target: {fileID: 4865072751266803248, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
       propertyPath: dialogGraph
       value: 
-      objectReference: {fileID: 3965311268370046156, guid: be9d1c8515b5a0f40b9e925fa8f3eac1, type: 3}
+      objectReference: {fileID: 3965311268370046156, guid: 3a2a2f93535bfd7488c6a6a9ed48e692, type: 3}
     - target: {fileID: 7941046017712992440, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
       propertyPath: m_Name
       value: PNJPrefab
@@ -70295,6 +70291,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
   m_PrefabInstance: {fileID: 1420528984}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1420528986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4865072751266803248, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
+  m_PrefabInstance: {fileID: 1420528984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8b4483e2b070c489d50630cbf98123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PnjScript
 --- !u!1 &1422639358
 GameObject:
   m_ObjectHideFlags: 0
@@ -76453,6 +76460,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1539714917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4865072751266803248, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
+  m_PrefabInstance: {fileID: 398304777}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8b4483e2b070c489d50630cbf98123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PnjScript
 --- !u!1 &1539932970
 GameObject:
   m_ObjectHideFlags: 0
@@ -95646,7 +95664,7 @@ PrefabInstance:
     - target: {fileID: 4865072751266803248, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
       propertyPath: dialogGraph
       value: 
-      objectReference: {fileID: 3965311268370046156, guid: be9d1c8515b5a0f40b9e925fa8f3eac1, type: 3}
+      objectReference: {fileID: 3965311268370046156, guid: a2a8b122d7b39a04ab8890949ce47867, type: 3}
     - target: {fileID: 7941046017712992440, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
       propertyPath: m_Name
       value: PNJPrefab
@@ -104522,6 +104540,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121163411}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2121403514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4865072751266803248, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
+  m_PrefabInstance: {fileID: 1959549987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8b4483e2b070c489d50630cbf98123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PnjScript
 --- !u!1 &2122399037
 GameObject:
   m_ObjectHideFlags: 0
@@ -105284,63 +105313,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147466551}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &8972281289262163718
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 85338273}
-    m_Modifications:
-    - target: {fileID: 7941046017712992440, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_Name
-      value: PNJPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440477440589439734, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 969a8730e908d654fa865b6c0c4d2c53, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
