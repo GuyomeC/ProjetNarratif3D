@@ -7,7 +7,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using static UnityEditor.Rendering.MaterialUpgrader;
 
 public enum GameLanguage
 {
