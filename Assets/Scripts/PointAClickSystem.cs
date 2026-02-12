@@ -17,6 +17,7 @@ public class PointAClickSystem : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame && !GM.IsInDialogue && !GM.CanShowDialogue && !DM.MenuPause.IsInPause)
         {
+            player.transform.rotation = Quaternion.Euler(0, fixedYRotation, 0);
             Vector3 mousePosition = Mouse.current.position.ReadValue();
             Ray ray = MainCamera.ScreenPointToRay(mousePosition);
             RaycastHit hit;

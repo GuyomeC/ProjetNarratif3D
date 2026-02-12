@@ -237,11 +237,15 @@ public class DialogManager : MonoBehaviour
             currentView.SpeakerTextOne.gameObject.SetActive(false);
             currentView.SpeakerTextTwo.gameObject.SetActive(false);
             currentView.TextBox.sprite = TextBoxNarrateur;
+            currentView.SpeakerImageOne.gameObject.SetActive(false);
+            currentView.SpeakerImageTwo.gameObject.SetActive(false);
         }
         else
         {
             currentView.SpeakerTextOne.gameObject.SetActive(true);
             currentView.SpeakerTextTwo.gameObject.SetActive(true);
+            currentView.SpeakerImageOne.gameObject.SetActive(true);
+            currentView.SpeakerImageTwo.gameObject.SetActive(true);
             if (currentNode.IsSpeakerOnLeft != false)
             {
                 currentView.TextBox.sprite = OnLeft;
