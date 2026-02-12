@@ -207,6 +207,7 @@ public class DialogManager : MonoBehaviour
 
     private void ShowNode(string nodeId)
     {
+        StopAllCoroutines();
         NextDialog.gameObject.SetActive(false);
         if (!nodeLookup.ContainsKey(nodeId))
         {
