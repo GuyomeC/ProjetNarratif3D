@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("ChangeScene");
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Audio");
 
         if (objs.Length > 1)
         {
