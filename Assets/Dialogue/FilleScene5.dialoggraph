@@ -113,7 +113,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: c8589bed82c81c112c3b226c2fb51f05
         m_Version: 2
-        m_Position: {x: 19547.79, y: 336.87238}
+        m_Position: {x: 19495.35, y: 325.8324}
         m_Title: EndNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -1442,7 +1442,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: f55ad71c7134b77f3e7f3a7bd425750d
         m_Version: 2
-        m_Position: {x: 18391.064, y: 142.70374}
+        m_Position: {x: 18348.504, y: 142.70374}
         m_Title: DialogueNode
         m_Tooltip: 
         m_NodePreviewModel:
@@ -1982,8 +1982,8 @@ MonoBehaviour:
           serializedVersion: 2
           x: 11704
           y: 86.4
-          width: 7888.801
-          height: 336.80002
+          width: 7906.4004
+          height: 328.80002
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 12964904468958730529

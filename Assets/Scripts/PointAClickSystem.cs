@@ -15,11 +15,12 @@ public class PointAClickSystem : MonoBehaviour
 
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame && !GM.IsInDialogue && !GM.CanShowDialogue && !DM.MenuPause.IsInPause)
+        if (Pointer.current != null && Pointer.current.press.wasPressedThisFrame
+            && !GM.IsInDialogue && !GM.CanShowDialogue && !DM.MenuPause.IsInPause)
         {
             player.transform.rotation = Quaternion.Euler(0, fixedYRotation, 0);
-            Vector3 mousePosition = Mouse.current.position.ReadValue();
-            Ray ray = MainCamera.ScreenPointToRay(mousePosition);
+            Vector2 pointerPosition = Pointer.current.position.ReadValue();
+            Ray ray = MainCamera.ScreenPointToRay(pointerPosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
@@ -28,13 +29,6 @@ public class PointAClickSystem : MonoBehaviour
             }
         }
 
-        if (DM.MenuPause.IsInPause)
-        {
-            player.isStopped = true;
-        }
-        else
-        {
-            player.isStopped = false;
-        }
+        player.isStopped = DM.MenuPause.IsInPause;
     }
 }

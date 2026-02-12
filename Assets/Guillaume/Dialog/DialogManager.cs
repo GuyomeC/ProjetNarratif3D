@@ -198,7 +198,7 @@ public class DialogManager : MonoBehaviour
                 GM.IsInDialogue = true;
                 ShowNode(CurrentDialogGraph.EntryNodeId);
             }
-            else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0 && Mouse.current.leftButton.wasPressedThisFrame && !MenuPause.IsInPause)
+            else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0 && Pointer.current.press.wasPressedThisFrame && !MenuPause.IsInPause)
             {
                 ShowNode(currentNode.NextNodeId);
             }
