@@ -48,6 +48,7 @@ public class BridgeScript : MonoBehaviour
 
     IEnumerator Fade(float targetAlpha)
     {
+        if(fadeImage == null) yield break;
         float startAlpha = fadeImage.color.a;
         float timer = 0;
 

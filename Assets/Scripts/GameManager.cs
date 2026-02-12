@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public bool CanShowDialogue = false;
-    public bool IsInDialogue = false;  
+    public bool IsInDialogue = false;
     public int idPNJ;
     public ChangeScene changeScene;
 
@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         changeScene = FindFirstObjectByType<ChangeScene>();
+
     }
 
     public void ChangeScene(string sceneName)

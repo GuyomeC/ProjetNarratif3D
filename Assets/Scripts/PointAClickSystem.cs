@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PointAClickSystem : MonoBehaviour
 {
@@ -9,13 +11,16 @@ public class PointAClickSystem : MonoBehaviour
     [SerializeField] float fixedYRotation = 0f;
 
     public GameManager GM;
+    public DialogManager DM;
 
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame && !GM.IsInDialogue && !GM.CanShowDialogue)
+        if (Pointer.current != null && Pointer.current.press.wasPressedThisFrame
+            && !GM.IsInDialogue && !GM.CanShowDialogue && !DM.MenuPause.IsInPause)
         {
-            Vector3 mousePosition = Mouse.current.position.ReadValue();
-            Ray ray = MainCamera.ScreenPointToRay(mousePosition);
+            player.transform.rotation = Quaternion.Euler(0, fixedYRotation, 0);
+            Vector2 pointerPosition = Pointer.current.position.ReadValue();
+            Ray ray = MainCamera.ScreenPointToRay(pointerPosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
@@ -24,8 +29,6 @@ public class PointAClickSystem : MonoBehaviour
             }
         }
 
-        //Vector3 currentRotation = player.transform.eulerAngles;
-        //currentRotation.y = fixedYRotation;
-        //player.transform.eulerAngles = currentRotation;
+        player.isStopped = DM.MenuPause.IsInPause;
     }
 }

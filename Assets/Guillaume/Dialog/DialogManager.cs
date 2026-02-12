@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
@@ -16,24 +17,26 @@ public enum GameLanguage
 
 public class DialogManager : MonoBehaviour
 {
-
+    
     public static DialogManager Instance;
-    public RuntimeDialogGraph RuntimeGraph;
     public GameManager GM;
-
-    public List<PnjScript> CurrentObject = new List<PnjScript>();
-
-    public bool IsDialogueStarted;
-
+    public VolumeSettings MenuPause;
     public RuntimeDialogGraph CurrentDialogGraph;
+
+    public List<PnjScript> PNJ = new List<PnjScript>();
+
+    private bool IsDialogueStarted;
+
+
+
 
 
     [Header("Localization")]
     public TextAsset LocalizationNameCSV;
     public TextAsset LocalizationDialogCSV;
     private Dictionary<string, string> localizedText = new Dictionary<string, string>();
-    public GameLanguage CurrentLanguage = GameLanguage.French;
-    public TMP_Dropdown LanguageDropdown;
+    private GameLanguage CurrentLanguage = GameLanguage.French;
+    private TMP_Dropdown LanguageDropdown;
 
     [System.Serializable]
     public class DialogView
@@ -50,9 +53,8 @@ public class DialogManager : MonoBehaviour
     }
 
     [Header("UI Views")]
+    public Image NextDialog;
     public DialogView PanelView;
-    //public DialogView PopupView; 
-    //public DialogView BubbleView;
     public Button ChoiceButtonPrefab;
     public Sprite OnLeft;
     public Sprite OnRight;
@@ -74,9 +76,9 @@ public class DialogManager : MonoBehaviour
     private void Start()
     {
 
-        for (int i = 0; i < CurrentObject.Count; i++)
+        for (int i = 0; i < PNJ.Count; i++)
         {
-            RuntimeDialogGraph rdg = CurrentObject[i].dialogGraph;
+            RuntimeDialogGraph rdg = PNJ[i].dialogGraph;
             foreach (var node in rdg.AllNodes)
             {
                 nodeLookup[node.NodeId] = node;
@@ -88,6 +90,9 @@ public class DialogManager : MonoBehaviour
             PanelView.Root.SetActive(false);
             PanelView.BG.gameObject.SetActive(false);
         }
+
+        MenuPause = FindFirstObjectByType<VolumeSettings>();
+        LanguageDropdown = MenuPause.LanguageDropdown;
     }
 
     public void SetLanguage(int languageIndex)
@@ -181,7 +186,9 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
-        if (GM.CanShowDialogue && Mouse.current.leftButton.wasPressedThisFrame)
+
+
+        if (GM.CanShowDialogue)
         {
             if (!PanelView.Root.activeInHierarchy && CurrentDialogGraph)
             {
@@ -190,7 +197,7 @@ public class DialogManager : MonoBehaviour
                 GM.IsInDialogue = true;
                 ShowNode(CurrentDialogGraph.EntryNodeId);
             }
-            else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0)
+            else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0 && Pointer.current.press.wasPressedThisFrame && !MenuPause.IsInPause)
             {
                 ShowNode(currentNode.NextNodeId);
             }
@@ -199,7 +206,8 @@ public class DialogManager : MonoBehaviour
 
     private void ShowNode(string nodeId)
     {
-        Debug.Log($"Affichage du noeud : {nodeId}");
+        StopAllCoroutines();
+        NextDialog.gameObject.SetActive(false);
         if (!nodeLookup.ContainsKey(nodeId))
         {
             EndDialogue();
@@ -208,9 +216,6 @@ public class DialogManager : MonoBehaviour
             return;
         }
         currentNode = nodeLookup[nodeId];
-
-        Debug.Log($"Noeud trouvé : {currentNode.NodeId} avec mode {currentNode.Mode}");
-        Debug.Log("NodeLookup : " + nodeLookup[nodeId].DialogueText);
 
         DialogView targetView = GetViewForMode(currentNode.Mode);
 
@@ -226,16 +231,20 @@ public class DialogManager : MonoBehaviour
             currentView = targetView;
         }
 
-        if(currentNode.Mode == DialogueMode.Narrateur)
+        if (currentNode.Mode == DialogueMode.Narrateur)
         {
             currentView.SpeakerTextOne.gameObject.SetActive(false);
             currentView.SpeakerTextTwo.gameObject.SetActive(false);
-            currentView.TextBox.sprite = TextBoxNarrateur;   
+            currentView.TextBox.sprite = TextBoxNarrateur;
+            currentView.SpeakerImageOne.gameObject.SetActive(false);
+            currentView.SpeakerImageTwo.gameObject.SetActive(false);
         }
         else
         {
             currentView.SpeakerTextOne.gameObject.SetActive(true);
             currentView.SpeakerTextTwo.gameObject.SetActive(true);
+            currentView.SpeakerImageOne.gameObject.SetActive(true);
+            currentView.SpeakerImageTwo.gameObject.SetActive(true);
             if (currentNode.IsSpeakerOnLeft != false)
             {
                 currentView.TextBox.sprite = OnLeft;
@@ -258,7 +267,7 @@ public class DialogManager : MonoBehaviour
 
 
         if (currentView.BodyText != null)
-            currentView.BodyText.text = GetText(currentNode.DialogueText);
+            StartCoroutine(ShowText());
 
         if (currentView.SpeakerImageOne != null)
             currentView.SpeakerImageOne.sprite = currentNode.SpeakerSpriteOne;
@@ -268,9 +277,6 @@ public class DialogManager : MonoBehaviour
 
         if (currentView.BG != null)
             currentView.BG.sprite = currentNode.BackgroundSprite;
-
-
-
 
         if (currentView.ChoiceContainer != null)
         {
@@ -297,6 +303,27 @@ public class DialogManager : MonoBehaviour
                 }
             }
         }
+
+    }
+
+    IEnumerator ShowText()
+    {
+        string DialogueText = "";
+
+        if (currentView.BodyText != null)
+        {
+            DialogueText = GetText(currentNode.DialogueText);
+        }
+
+        for (int i = 0; i <= DialogueText.Length; i++)
+        {
+            currentView.BodyText.text = DialogueText.Substring(0, i);
+            yield return new WaitForSeconds(MenuPause.textSpeed);
+        }
+
+        NextDialog.gameObject.SetActive(true);
+        Animator animator = NextDialog.GetComponent<Animator>();
+        animator.SetTrigger("Lancer");
     }
 
     private void EndDialogue()
