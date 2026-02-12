@@ -9,10 +9,11 @@ public class PointAClickSystem : MonoBehaviour
     [SerializeField] float fixedYRotation = 0f;
 
     public GameManager GM;
+    public DialogManager DM;
 
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame && !GM.IsInDialogue && !GM.CanShowDialogue)
+        if (Mouse.current.leftButton.wasPressedThisFrame && !GM.IsInDialogue && !GM.CanShowDialogue && !DM.MenuPause.IsInPause)
         {
             Vector3 mousePosition = Mouse.current.position.ReadValue();
             Ray ray = MainCamera.ScreenPointToRay(mousePosition);
@@ -24,8 +25,13 @@ public class PointAClickSystem : MonoBehaviour
             }
         }
 
-        //Vector3 currentRotation = player.transform.eulerAngles;
-        //currentRotation.y = fixedYRotation;
-        //player.transform.eulerAngles = currentRotation;
+        if (DM.MenuPause.IsInPause)
+        {
+            player.isStopped = true;
+        }
+        else
+        {
+            player.isStopped = false;
+        }
     }
 }

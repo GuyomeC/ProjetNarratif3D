@@ -21,12 +21,13 @@ public class DialogManager : MonoBehaviour
     
     public static DialogManager Instance;
     public GameManager GM;
-    private VolumeSettings MenuPause;
+    public VolumeSettings MenuPause;
     public RuntimeDialogGraph CurrentDialogGraph;
 
     public List<PnjScript> PNJ = new List<PnjScript>();
 
     private bool IsDialogueStarted;
+
 
 
 
@@ -186,7 +187,9 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
-        if (GM.CanShowDialogue && Mouse.current.leftButton.wasPressedThisFrame)
+
+
+        if (GM.CanShowDialogue)
         {
             if (!PanelView.Root.activeInHierarchy && CurrentDialogGraph)
             {
@@ -195,7 +198,7 @@ public class DialogManager : MonoBehaviour
                 GM.IsInDialogue = true;
                 ShowNode(CurrentDialogGraph.EntryNodeId);
             }
-            else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0)
+            else if (!string.IsNullOrEmpty(currentNode.NextNodeId) && currentNode != null && currentNode.Choices.Count == 0 && Mouse.current.leftButton.wasPressedThisFrame && !MenuPause.IsInPause)
             {
                 ShowNode(currentNode.NextNodeId);
             }
@@ -296,6 +299,7 @@ public class DialogManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     IEnumerator ShowText()

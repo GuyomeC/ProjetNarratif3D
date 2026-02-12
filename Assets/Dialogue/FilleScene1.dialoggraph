@@ -120,7 +120,7 @@ MonoBehaviour:
     - rid: 3308995895183802465
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: 5da1c51de5071514ba3c9cdbeadc37df, type: 3}
+        m_Value: {fileID: 21300000, guid: 8fc15c52626e3324aa0d4b4fc1a72b7e, type: 3}
     - rid: 3308995895183802466
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -265,7 +265,7 @@ MonoBehaviour:
     - rid: 3308995895183802485
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: 5da1c51de5071514ba3c9cdbeadc37df, type: 3}
+        m_Value: {fileID: 21300000, guid: 8fc15c52626e3324aa0d4b4fc1a72b7e, type: 3}
     - rid: 3308995895183802486
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
@@ -2180,10 +2180,10 @@ MonoBehaviour:
         m_LocalSubgraphs: []
         m_LastKnownBounds:
           serializedVersion: 2
-          x: 105.600006
-          y: -80.8
-          width: 15172
-          height: 431.2
+          x: -72.8
+          y: -79.2
+          width: 15350.399
+          height: 429.59998
         m_GraphElementMetaData:
         - m_Guid:
             m_Value0: 10334346942709623139
@@ -2502,7 +2502,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 63e9d969caf96a8f97bcccd31bb59952
         m_Version: 2
-        m_Position: {x: 105.85808, y: 100.799995}
+        m_Position: {x: -72.541916, y: 103.19999}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -2539,7 +2539,7 @@ MonoBehaviour:
           serializedVersion: 2
           Hash: 848cfbaed9dab2a920c4760a6ab4ebad
         m_Version: 2
-        m_Position: {x: 250.82541, y: -80.41652}
+        m_Position: {x: 72.425415, y: -78.016525}
         m_Title: 
         m_Tooltip: 
         m_NodePreviewModel:
@@ -2662,7 +2662,7 @@ MonoBehaviour:
     - rid: 8154959208602140760
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:
-        m_Value: {fileID: 21300000, guid: 5da1c51de5071514ba3c9cdbeadc37df, type: 3}
+        m_Value: {fileID: 21300000, guid: 8fc15c52626e3324aa0d4b4fc1a72b7e, type: 3}
     - rid: 8154959208602140761
       type: {class: 'Constant`1[[UnityEngine.Sprite, UnityEngine.CoreModule]]', ns: Unity.GraphToolkit.Editor, asm: Unity.GraphToolkit.Internal.Editor}
       data:

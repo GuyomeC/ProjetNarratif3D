@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class VolumeSettings : MonoBehaviour
@@ -11,6 +12,7 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private Slider TextSpeedSlider;
     public float textSpeed;
     public TMP_Dropdown LanguageDropdown;
+    public bool IsInPause = false;
 
 
     void Awake()
@@ -76,5 +78,10 @@ public class VolumeSettings : MonoBehaviour
     {
         textSpeed = PlayerPrefs.GetFloat("textSpeed", 0.05f);
         SetTextSpeed();
+    }
+
+    public void TogglePause()
+    {
+        IsInPause = !IsInPause;
     }
 }
